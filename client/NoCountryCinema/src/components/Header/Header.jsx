@@ -1,13 +1,14 @@
 import React from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import LogoNC from "../../../public/img/logo_NCinema.png";
 
-const Navbarr = () => {
+const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home" className="fs-3">
-          NC Cinema
+        <Navbar.Brand href="#home" className="img-fluid">
+          <img src={LogoNC} alt="logo" height="50" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -36,4 +37,4 @@ const Navbarr = () => {
   );
 };
 
-export default Navbarr;
+export default Header;
