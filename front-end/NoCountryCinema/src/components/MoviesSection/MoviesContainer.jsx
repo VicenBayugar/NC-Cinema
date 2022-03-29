@@ -9,7 +9,7 @@ const MoviesContainer = () => {
       <h3>PELÍCULAS</h3>
       <hr />
       <Container
-				className="scrolling-wrapper row flex-row flex-nowrap row-cols-1 row-cols-md-3 p-2 
+				className="section scrolling-wrapper row flex-row flex-nowrap row-cols-1 row-cols-md-3 p-2 
 "
 				style={{ overflowX: "auto", overflowY: "hidden", whiteSpace: "nowrap" }}>
         <Movie />
