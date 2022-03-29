@@ -1,14 +1,7 @@
-<<<<<<< HEAD
 import React from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogoNC from '/img/logo_NCinema.png';
-=======
-import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import LogoNC from "../../../public/img/logo_NCinema.png";
->>>>>>> 4983ef989023d29356c7e20e3b92229f6fc37b1f
 
 const Header = () => {
   return (
