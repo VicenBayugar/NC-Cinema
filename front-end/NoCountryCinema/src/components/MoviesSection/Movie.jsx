@@ -1,10 +1,10 @@
 import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Movie = () => {
+const Movie = (props) => {
   return (
     <Card style={{ width: '12rem', padding: '0', margin: '5px', height: '100%' }}>
-      <Card.Img variant="top" src="https://via.placeholder.com/190x220" style={{objectFit: 'contain'}}/>
+      <Card.Img variant="top" src="https://via.placeholder.com/190x220" style={{objectFit: 'contain'}}/> {/* props.urlImg */}
       <Card.Body
         style={{
           background: 'black',
@@ -14,7 +14,7 @@ const Movie = () => {
 
         }}
       >
-        <Card.Text>Name</Card.Text>
+        <Card.Text>Name</Card.Text> {/* props.name */}
       </Card.Body>
     </Card>
   );
