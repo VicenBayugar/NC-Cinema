@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Movie = () => {
   return (
-    <Card style={{ width: 'auto', padding: '0', margin: '10px', height: '100%' }}>
-      <Card.Img variant="top" src="https://via.placeholder.com/190x220" />
+    <Card style={{ width: '12rem', padding: '0', margin: '5px', height: '100%' }}>
+      <Card.Img variant="top" src="https://via.placeholder.com/190x220" style={{objectFit: 'contain'}}/>
       <Card.Body
         style={{
           background: 'black',
@@ -14,7 +14,7 @@ const Movie = () => {
 
         }}
       >
-        <Card.Title>Name</Card.Title>
+        <Card.Text>Name</Card.Text>
       </Card.Body>
     </Card>
   );
