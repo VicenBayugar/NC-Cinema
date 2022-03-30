@@ -4,4 +4,6 @@ const controller = require("../controllers/movies");
 
 routes.get('/',controller.index);
 
+routes.get('/:id',controller.moviesId);
+
 module.exports = routes;
