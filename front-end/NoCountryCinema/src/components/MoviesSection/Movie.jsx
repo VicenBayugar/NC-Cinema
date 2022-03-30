@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Movie = (props) => {
   return (
-    <Card style={{ width: '12rem', padding: '0', margin: '5px', height: '100%' }}>
-      <Card.Img variant="top" src="https://via.placeholder.com/190x220" style={{objectFit: 'contain'}}/> {/* props.urlImg */}
+    <Card className='movieCard' style={{ width: '12rem', padding: '0', margin: '5px', height: '100%'}}>
+      <Card.Img variant="top" src={props.imgUrl} style={{objectFit: 'contain', width: 'auto', height: '15em', background: 'black'}}/> 
       <Card.Body
         style={{
           background: 'black',
@@ -14,7 +14,7 @@ const Movie = (props) => {
 
         }}
       >
-        <Card.Text>Name</Card.Text> {/* props.name */}
+        <Card.Text style={{overflow: 'hidden'}}>{props.name}</Card.Text>
       </Card.Body>
     </Card>
   );

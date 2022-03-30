@@ -10,3 +10,7 @@ hr {
   opacity: 1 !important;
   margin: 0 !important;
 }
+
+.movieCard {
+  border: 0;
+}
