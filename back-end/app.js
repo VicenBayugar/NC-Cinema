@@ -1,8 +1,12 @@
 import express from "express"
 const app = express()
 
-const port = 3000
+import { config } from "dotenv"
+config()
 
-app.listen(port, () => {
-    console.log(`http://localhost:${port}`)
+
+const PORT = process.env.PORT || 3001
+
+app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`)
 })
