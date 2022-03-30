@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 
 const dbConnect = () => {
@@ -15,5 +15,4 @@ const dbConnect = () => {
     )
 
 }
-
-export default dbConnect;
+module.exports =dbConnect;
