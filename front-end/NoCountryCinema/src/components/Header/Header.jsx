@@ -12,7 +12,7 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto fs-5">
+          <Nav className="ms-auto fs-5 d-flex align-items-center justify-content-center">
             <Nav.Link href="#promociones">Promociones</Nav.Link>
             <Nav.Link href="#candy">Candy</Nav.Link>
             <NavDropdown title="Películas" id="collasible-nav-dropdown">
@@ -30,6 +30,8 @@ const Header = () => {
                 Todas las categorías
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="#promociones"><i className="bi bi-person-circle text-light"></i></Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

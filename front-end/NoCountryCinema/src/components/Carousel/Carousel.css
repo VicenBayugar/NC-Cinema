@@ -1,0 +1,6 @@
+.img-test {
+  width: 100% !important;
+  max-height: 500px;
+  object-fit: contain !important;
+  margin: auto;
+}

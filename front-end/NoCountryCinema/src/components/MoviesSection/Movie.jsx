@@ -14,7 +14,7 @@ const Movie = (props) => {
 
         }}
       >
-        <Card.Text style={{overflow: 'hidden'}}>{props.name}</Card.Text>
+        <Card.Text className='text-wrap'>{props.name}</Card.Text>
       </Card.Body>
     </Card>
   );
