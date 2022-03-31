@@ -4,16 +4,16 @@ import './footer.css'
 
 const Footer = () => {
     return (
-        <footer >
+        <footer className='mt-5'>
             <Container>
                 <hr />
                 <Row className='centrarFooter ' style={{
                     margin: "15px"
                 }}>
 
-                    <Col >
+                    <Col className='d-flex align-items-center flex-column justify-content-center'>
                         <Row className='centrarFooter'>
-                            <p className=''>Siguenos si amas las películas o quieres enterarte de
+                            <p className='fs-5'>Siguenos si amas las películas o quieres enterarte de
                                 nuestras promociones, concursos y mas.
                             </p>
                         </Row>
@@ -58,8 +58,7 @@ const Footer = () => {
                     }}>
                         <p>¿Donde estamos?</p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0167125041003!2d-58.383759082556146!3d-34.6037389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1648610425762!5m2!1ses-419!2sar"
-                            width="500"
-                            height="250"
+                            
                             loading="lazy"
                             margin="1px"
                             
