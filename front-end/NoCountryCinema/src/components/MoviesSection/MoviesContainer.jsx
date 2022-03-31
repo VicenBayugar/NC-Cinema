@@ -4,13 +4,13 @@ import Movie from './Movie';
 import React from 'react';
 import './MovieContainer.css'
 import Data from '../../data/movies.json'
-const MoviesContainer = () => {
+const MoviesContainer = (props) => {
   return (
-    <Container>
-      <h3>PELÍCULAS</h3>
+    <Container className='mt-5'>
+      <h3>{props.title}</h3>
       <hr />
       <Container
-				className="section scrolling-wrapper row flex-row flex-nowrap row-cols-1 row-cols-md-3 p-2 
+				className="section scrolling-wrapper row flex-row flex-nowrap row-cols-1 row-cols-md-3 p-2 w-100
 "
         style={{ overflowX: "auto", overflowY: "hidden", whiteSpace: "nowrap" }}>
         {Data.map((item, index) => {

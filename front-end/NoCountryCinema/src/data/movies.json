@@ -4,49 +4,162 @@
         "name": "Harry Potter y la Piedra Fumanchera",
         "imgUrl": "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_FMjpg_UX1000_.jpg",
         "description": "Harry Potter es un huérfano que vive con sus desagradables tíos, los Dursley, y su repelente primo Dudley. Se acerca a su undécimo cumpleaños y tiene pocas esperanzas de recibir algún regalo, ya que nunca nadie se acuerda de él. Sin embargo, pocos días antes de su cumpleaños, una serie de misteriosas cartas dirigidas a él y escritas con una estridente tinta verde rompen la monotonía de su vida: Harry es un mago y sus padres también lo eran, esto fascina a Harry ya que se da cuenta de este gran secreto. Dolido con sus tíos por haberle ocultado sus orígenes y en vista de que el mundo normal no le ofrece grandes oportunidades, Harry acepta ir a Hogwarts. Allí conocerá a los que serán sus grandes amigos, Hermione Granger y Ron Weasley. Junto a sus nuevos amigos, vivirá una fabulosa aventura que supera con creces la más desbordante imaginación.",
-        "release": false
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 152,
+        "year": 2001,
+        "director": "Chris Columbus",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=nnuRYwGw9bo",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
+
     },
     {
         "id": 2,
         "name": "Harry Potter y la Cámara Secreta" ,
         "imgUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTKoQi-Ht4amTZpAnqxHWCTuTDGbP0k7Ez3uoivUCHb_u6aeWHz",
         "description": "Tras derrotar una vez más a Lord Voldemort, su siniestro enemigo en Harry Potter y la Piedra Filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte que una amenaza mortal se cierne sobre la escuela. Así pues, Harry no se lo piensa dos veces y, acompañado de Ron, su mejor amigo, se dirige a Hogwarts en un coche volador. Pero, ¿puede un aprendiz de mago defender la escuela de los malvados que pretenden destruirla? Sin saber que alguien ha abierto la Cámara Secreta, dejando escapar una serie de monstruos peligrosos, Harry y sus amigos Ron y Hermione tendrán que enfrentarse a arañas gigantes, serpientes encantadas, fantasmas enfurecidos y, sobre todo, a la mismísima reencarnación de su más temible adversario.",
-        "release": false
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 161,
+        "year": 2002,
+        "director": "Chris Columbus",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=2lSpGlsZtk0",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     },
     {
         "id": 3,
         "name": "Harry Potter y el Prisionero de Azkaban" ,
         "imgUrl": "http://image.tmdb.org/t/p/original/qMn0YCWKxt7xg8nqRnRj2Ei9qgx.jpg",
         "description": "Por la cicatriz que lleva en la frente, sabemos que Harry Potter no es un niño como los demás, sino el héroe que venció a lord Voldemort, el más temible y maligno mago de todos los tiempos y culpable de la muerte de los padres de Harry. Desde entonces, Harry no tiene más remedio que vivir con sus pesados tíos y su insoportable primo Dudley, todos ellos muggles, o sea, personas no magas, que desprecian a su sobrino debido a sus poderes. Igual que en las dos primeras partes de la serie Harry aguarda con impaciencia el inicio del tercer curso en el Colegio Hogwarts de Magia y Hechicería. Tras haber cumplido los trece años, solo y lejos de sus amigos de Hogwarts, Harry se pelea con su bigotuda tía Marge, a la que convierte en globo, y debe huir en un autobús mágico. Mientras tanto, de la prisión de Azkaban se ha escapado un terrible villano, Sirius Black, un asesino en serie con poderes mágicos que fue cómplice de Lord Voldemort y que parece dispuesto a eliminar a Harry del mapa. Y por si esto fuera poco, Harry deberá enfrentarse también a unos terribles monstruos, los dementores, seres abominables capaces de robarles la felicidad a los magos y borrar todo recuerdo hermoso de aquellos que osan mirarlos. Lo que ninguno de estos malvados personajes sabe es que Harry, con la ayuda de sus fieles amigos Ron y Hermione, es capaz de todo y mucho más.",
-        "release": false
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 141,
+        "year": 2004,
+        "director": "Alfonso Cuarón",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=cUtaBkW1MKo",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     },
     {
         "id": 4,
         "name": "Harry Potter y el Cáliz de Fuego" ,
         "imgUrl": "https://flxt.tmsimg.com/assets/p90599_p_v8_aq.jpg",
         "description": "A sus catorce años, a Harry le gustaría ser un joven mago como los demás y dedicarse a aprender nuevos sortilegios, encontrarse con sus amigos Ron y Hermione y asistir con ellos a los Mundiales de Quidditch. Sin embargo, al llegar al colegio le espera una gran sorpresa que lo obligará a enfrentarse a los desafíos más temibles de toda su vida. Si logra superarlos, habrá demostrado que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le espera.",
-        "release": false
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 157,
+        "year": 2005,
+        "director": "Mike Newell",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=wX5dWfUKGPg",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     },
     {
         "id": 5,
         "name": "Harry Potter y la Órden del Fénix" ,
         "imgUrl": "https://i.pinimg.com/originals/fe/d4/05/fed405fc460b8f363b9d7b639200b968.jpg",
         "description": "Lord Voldemort ha regresado, pero el Ministerio de la Magia está haciendo todo lo posible para evitar que el mundo de los magos se entere de la verdad - incluso de que designaron a la funcionaria de Ministerio Dolores Umbridge como nueva profesora de Defensa Contra las Artes Oscuras en Hogwarts. Cuando Umbridge se niega a enseñar práctica de magia defensiva, Ron y Hermione convencen a Harry de entrenar en secreto a un grupo selecto de alumnos para la guerra de magos que se avecina. Un enfrentamiento aterrador entre el bien y el mal los espera.",
-        "release": false
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 138,
+        "year": 2007,
+        "director": "David Yates",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=jdEulcjAvQI",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     },
     {
         "id": 6,
         "name": "Harry Potter y el Misterio del Príncipe" ,
         "imgUrl": "https://www.okchicas.com/wp-content/uploads/2020/10/Harry-Potter-y-el-misterio-del-principe.jpg",
         "description": "Voldemort va tomando control tanto del mundo Muggle como del mundo de la magia, y Hogwarts ya no es el lugar seguro que solía ser. Harry sospecha que tal vez hasta el castillo sea peligroso. Dumbledore sabe que la batalla final se aproxima, y por eso quiere preparar a Harry. Con ese fin, Dumbledore busca la ayuda de su viejo amigo y colega, el profesor Horace Slughorn, que cree que tiene información muy importante. Entre tanto, entre las paredes de la escuela, los estudiantes se encuentran afectados por algo que siempre ataca a los adolescentes: las hormonas. Harry cada vez se siente más atraído por Ginny, pero eso también le pasa a Dean Thomas. Por su parte, Lavender Brown ha decidido que Ron tiene que ser para ella, ¡lástima que no contó con los chocolates de Romilda Vane! Y también está Hermione, hirviendo de celos, pero decidida a no mostrar sus sentimientos. Los romances florecen, pero uno de los estudiantes no se deja afectar por todo ello. El está decidido a salirse con su plan, si bien es un plan muy tenebroso. El amor está por todos lados, pero la tragedia se cierne sobre Hogwarts, que tal vez ya nunca será como antes.",
-        "release": false
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 153,
+        "year": 2009,
+        "director": "David Yates",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=CHiGk9bEht8",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     },
     {
         "id": 7,
         "name": "Harry Potter y las Reliquias de la Muerte: Parte 1" ,
         "imgUrl": "https://raisingchildren.net.au/__data/assets/image/0020/51446/harry-potter-and-the-deathly-hallows-part-1.jpg",
         "description": "Harry, Ron y Hermione se proponen seguir con la misión de encontrar y destruir el secreto de la inmortalidad de Voldemort: los Horrocruxes. Sin contar con sus profesores y sin la protección de Dumbledore los tres amigos deber confiar en sí mismos más que nunca. Pero hay fuerzas oscuras en medio de ellos que amenazan con separarlos. En su búsqueda, los tres amigos descubren una antigua y olvidada leyenda: la de las Reliquias de la Muerte. Y si esta resulta ser cierta, podría dar a Voldemort el máximo poder que busca. Mientras tanto, Harry cada día está más cerca de enfrentar su destino y librar la última batalla contra Voldemort.",
-        "release": false
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 146,
+        "year": 2010,
+        "director": "David Yates",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=GdNvFDzSNHQ",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     }
 
 ]
