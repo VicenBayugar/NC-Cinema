@@ -1,3 +1,6 @@
+.title-container {
+    border-bottom: 3px solid rgb(0, 218, 207);
+}
 
 ::-webkit-scrollbar {
     width: .6em;
