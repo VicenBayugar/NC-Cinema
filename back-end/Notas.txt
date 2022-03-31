@@ -6,9 +6,9 @@ butacas = boolean
 
 ver asiganción de horarios y salas !!!
 
-sala = id, nombre, [peliculas], [butacas], días, horarios.
+sala = id, name, [peliculas], [butacas], días, horarios.
 
-Películas = id, título, origen, género, director, actores, calificación, duración, imagen, trailer, sinopsis, día, horario, estreno.
+Películas = id, title, origin, genro, director, actors, qualify, length, image, trailer, resume, day, schedule (horario), premiere (estreno).
 
 usuario = id, nombre, apellido, email, password, documento, [peliculas compradas], [butacas reservadas].
 
