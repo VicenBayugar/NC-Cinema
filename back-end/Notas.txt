@@ -1,0 +1,30 @@
+El cine tiene 3 salas
+Cada sala proyecta una o mas péliculas 
+cada sala tiene 80 butacas
+
+butacas = boolean
+
+ver asiganción de horarios y salas !!!
+
+sala = id, nombre, [peliculas], [butacas], días, horarios.
+
+Películas = id, título, origen, género, director, actores, calificación, duración, imagen, trailer, sinopsis, día, horario, estreno.
+
+usuario = id, nombre, apellido, email, password, documento, [peliculas compradas], [butacas reservadas].
+
+---------------------------------------
+
+api/userDios
+api/users/id/delete (Eliminar cuenta de usuario)
+api/users (solo los admin de la pagina pueden acceder al listado de usuarios y ver detalles de todos los usuarios)
+api/movies/create (solo los admin de la pagina pueden crear películas)
+api/movies/edit  (solo los admin de la pagina pueden editar películas)
+api/movies/delete  (solo los admin de la pagina pueden eliminar películas)
+
+api/movies (cualquier visitante puede acceder al listado de películas)
+api/movies/:id (Detalle de película)
+
+api/users/register (cualquiera puede registrarse)
+api/users/login (Usuarios registrados pueden loguearse)
+api/users/id (Perfil del usuario registrado y logueado)
+api/users/id/update (Vista de edición de usuario)
