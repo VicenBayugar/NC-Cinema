@@ -160,6 +160,52 @@
             "doblada",
             "subtitulada"
         ]
+    },
+    {
+        "id": 8,
+        "name": "Harry Potter y las Reliquias de la Muerte: Parte 2" ,
+        "imgUrl": "https://i.pinimg.com/originals/f1/ab/2b/f1ab2b0dfbfa22504bf3b91b0d60b221.jpg",
+        "description": "Un enfrentamiento entre el bien y el mal espera cuando el joven Harry (Daniel Radcliffe), Ron (Rupert Grint) y Hermione (Emma Watson) se preparan para una última batalla en contra de Lord Voldemort (Ralph Fiennes). Harry se ha convertido en un joven fuerte que tiene la misión de librar al mundo del mal. Los amigos tienen que buscar los Horcruxes que mantienen inmortal al mago. Harry y Voldemort se encuentra en el Castillo Hogwarts para una pelea épica.",
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 130,
+        "year": 2011,
+        "director": "David Yates",
+        "gender": [
+            "Fantasía",
+            "Aventuras"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=-kDonIIXuqo",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Rápido y Furioso" ,
+        "imgUrl": "https://imgsnotigram.s3.amazonaws.com/uploads/2020/06/fast-and-furious-683x1024.jpg",
+        "description": "Cada noche, Los Ángeles es testigo de alguna carrera de coches. Últimamente ha aparecido un nuevo corredor, todos saben que es duro y que es rápido, pero lo que no saben es que es un detective con la determinación de salir victorioso.",
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 106,
+        "year": 2001,
+        "director": "Justin Lin",
+        "gender": [
+            "Crimen",
+            "Aventuras",
+            "Thriller"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=D4X0R5VXhEw",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     }
-
 ]
