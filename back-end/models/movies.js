@@ -2,11 +2,12 @@ const monogoose = require("mongoose")
 
 const movieSchema = new monogoose.Schema(
     {
+       
         title:{
             type:String
         },
         resume:{
-            type:Number
+            type:String
         },
         origin:{
             type:String
@@ -40,6 +41,12 @@ const movieSchema = new monogoose.Schema(
         },
         premiere:{
             type:Boolean
+        }, 
+        tags:{
+            type: [String]
+        },
+        language:{
+            type: [String]
         }
 
         
