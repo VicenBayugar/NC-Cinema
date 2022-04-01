@@ -41,6 +41,12 @@ const movieSchema = new monogoose.Schema(
         },
         premiere:{
             type:Boolean
+        }, 
+        tags:{
+            type: [String]
+        },
+        language:{
+            type: [String]
         }
 
         
