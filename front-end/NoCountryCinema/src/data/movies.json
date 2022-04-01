@@ -207,5 +207,29 @@
             "doblada",
             "subtitulada"
         ]
+    },
+    {
+        "id": 10,
+        "name": "Rápido y Furioso 2" ,
+        "imgUrl": "https://xl.movieposterdb.com/05_03/2003/0322259/xl_8796_0322259_4246d350.jpg?v=2021-10-03%2016:01:03",
+        "description": "Brian O'Conner ayuda a la policía de Miami y se infiltra en el mundo de las carreras ilegales, esperando así redimirse ante sus superiores.",
+        "premiere": false,
+        "language":  [
+            "Español",
+            "Inglés"
+        ],
+        "duration": 108,
+        "year": 2003,
+        "director": "John Singleton",
+        "gender": [
+            "Crimen",
+            "Aventuras",
+            "Thriller"
+        ],
+        "trailer": "https://www.youtube.com/watch?v=D4X0R5VXhEw",
+        "tags": [
+            "doblada",
+            "subtitulada"
+        ]
     }
 ]
