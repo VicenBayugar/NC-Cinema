@@ -1,13 +1,17 @@
-import MoviesContainer from './components/MoviesSection/MoviesContainer';
-import './App.css';
-import { Carro } from './components/Carousel/Carousel';
+import MoviesContainer from './components/MoviesSection/MoviesContainer'
+import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from './components/Footer/Footer';
+import {Carro} from './components/Carousel/Carousel'
+import MoviesMain from './components/MoviesSection/MoviesMain';
 
 function App() {
   return (
     <div className="App">
       <Carro />
-      <MoviesContainer title="PELÍCULAS" />
-      <MoviesContainer title="PRÓXIMOS ESTRENOS" />
+      <MoviesMain />
+      <MoviesContainer title='PRÓXIMOS ESTRENOS'/>
+      <Footer/>
     </div>
   );
 }
