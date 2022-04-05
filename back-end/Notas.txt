@@ -28,3 +28,28 @@ api/users/register (cualquiera puede registrarse)
 api/users/login (Usuarios registrados pueden loguearse)
 api/users/id (Perfil del usuario registrado y logueado)
 api/users/id/update (Vista de edición de usuario)
+
+-------------------------------------------------
+
+//usuario = nombre, apellido, email, contraseña, tipo doc, nro doc, id pelicula, id asientos
+// sala = nombre, asientos
+
+sala{
+    _id,
+    nombre:" sasrarsa",
+    asientos: [{
+        mongoose.Schema.typs.ObjetId, ref:asiento
+    }]
+}
+
+asiento{
+    idAsiento,
+    nroAsiento,
+    disponible,
+    idUsuario
+}
+estreno{
+    idPelicula
+    idSala
+    fecha
+}
