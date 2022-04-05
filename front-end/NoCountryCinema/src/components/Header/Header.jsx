@@ -8,8 +8,10 @@ const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home" className="img-fluid">
-          <img src={LogoNC} alt="logo" height="50" />
+        <Navbar.Brand className="img-fluid">
+          <Link to="/">
+            <img src={LogoNC} alt="logo" height="50" />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -31,7 +33,7 @@ const Header = () => {
                 Todas las categorías
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="">
+            <Nav.Link>
               <Link to="/login">
                 <i className="bi bi-person-circle text-light"></i>
               </Link>
