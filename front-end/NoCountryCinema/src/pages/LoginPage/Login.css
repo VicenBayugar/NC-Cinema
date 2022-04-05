@@ -1,0 +1,9 @@
+img {
+    max-height: 500px;
+    object-fit:contain;
+}
+
+body{
+    color: white;
+}
+

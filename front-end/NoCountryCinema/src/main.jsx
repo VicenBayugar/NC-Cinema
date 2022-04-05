@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Login } from './pages/LoginPage/Login';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -13,6 +14,7 @@ ReactDOM.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
     <Footer />
   </BrowserRouter>,
