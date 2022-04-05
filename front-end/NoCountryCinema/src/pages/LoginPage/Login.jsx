@@ -6,7 +6,7 @@ import LoginImg from '../../../public/img/loginBGimage.jpeg';
 import { Link } from 'react-router-dom';
 
 export const Login = () => {
-  const [user, setUser] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
     <Container>
@@ -26,13 +26,21 @@ export const Login = () => {
               className="mb-3 w-100"
               controlId="exampleForm.ControlInput1">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" />
+              <Form.Control
+                value={email}
+                type="email"
+                onChange={e => setEmail(e.target)}
+              />
             </Form.Group>
             <Form.Group
               className="mb-3 w-100"
               controlId="exampleForm.ControlInput1">
               <Form.Label>Contraseña</Form.Label>
-              <Form.Control type="password" />
+              <Form.Control
+                value={password}
+                type="password"
+                onChange={e => setPassword(e.target)}
+              />
             </Form.Group>
             <Button
               className="w-100 mt-4 f-inter fw-bold button-primary"
