@@ -31,14 +31,24 @@ api/users/id/update (Vista de edición de usuario)
 
 -------------------------------------------------
 
-//usuario = nombre, apellido, email, contraseña, tipo doc, nro doc, id pelicula, id asientos
+//usuario = nombre, apellido, email, contraseña, tipo doc, nro doc, [id compra]
 // sala = nombre, asientos
+
+compra{
+    _id
+    id_sala,
+    id_usuario
+    precio
+}
 
 sala{
     _id,
     nombre:" sasrarsa",
     asientos: [{
         mongoose.Schema.typs.ObjetId, ref:asiento
+    }],
+    peliculas: [{
+        mongoose.Schema.typs.ObjetId, ref:Pelicula
     }]
 }
 
