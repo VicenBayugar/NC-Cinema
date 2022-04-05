@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form, Button, Container, Col, Row } from 'react-bootstrap';
 
 export const Login = () => {
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
   return (
-    <div className="col-12">
-      <div className="col-6">s</div>
-      <div className="col-6">s</div>
-    </div>
+    <Container>
+      <Row>
+        <Col>s</Col>
+        <Col>s</Col>
+      </Row>
+    </Container>
   );
 };
