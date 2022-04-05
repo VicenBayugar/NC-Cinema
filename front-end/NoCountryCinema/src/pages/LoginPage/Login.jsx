@@ -11,7 +11,9 @@ export const Login = () => {
   return (
     <Container>
       <Row>
-        <Col className="d-flex flex-column justify-content-center align-items-center">
+        <Col
+          lg={6}
+          className="d-flex flex-column justify-content-center align-items-center">
           <h1 className="f-inter text-center fs-1 fw-bold lh-sm c-primary">
             INICIAR SESIÓN
           </h1>
@@ -27,9 +29,8 @@ export const Login = () => {
               controlId="exampleForm.ControlInput1">
               <Form.Label>Email</Form.Label>
               <Form.Control
-                value={email}
                 type="email"
-                onChange={e => setEmail(e.target)}
+                onChange={e => setEmail(e.target.value)}
               />
             </Form.Group>
             <Form.Group
@@ -37,9 +38,8 @@ export const Login = () => {
               controlId="exampleForm.ControlInput1">
               <Form.Label>Contraseña</Form.Label>
               <Form.Control
-                value={password}
                 type="password"
-                onChange={e => setPassword(e.target)}
+                onChange={e => setPassword(e.target.value)}
               />
             </Form.Group>
             <Button
@@ -50,7 +50,7 @@ export const Login = () => {
             </Button>
           </Form>
         </Col>
-        <Col>
+        <Col lg={6} className="right-side">
           <img src={LoginImg} />
         </Col>
       </Row>
