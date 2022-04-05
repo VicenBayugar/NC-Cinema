@@ -3,13 +3,14 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
 import {Carro} from './components/Carousel/Carousel'
+import MoviesMain from './components/MoviesSection/MoviesMain';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Carro />
-      <MoviesContainer title='PELÍCULAS'/>
+      <MoviesMain />
       <MoviesContainer title='PRÓXIMOS ESTRENOS'/>
       <Footer/>
     </div>
