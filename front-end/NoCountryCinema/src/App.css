@@ -1,5 +1,9 @@
+:root {
+  --primary-color: #02c5bc;
+}
+
 .App {
-  background: black;
+  background: #182025;
   color: white;
 }
 
@@ -13,4 +17,22 @@ hr {
 
 .movieCard {
   border: 0;
+}
+/* estylos globales */
+
+.f-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.border-c-primary {
+  border: 1px solid var(--primary-color);
+}
+
+.c-primary {
+  color: var(--primary-color);
 }
