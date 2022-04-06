@@ -63,7 +63,7 @@ const controller = {
             if (!movie) res.status(404).send("No item found");
             res.status(200).send("Pelicula borrada con un ëxito exitoso!");
         } catch (error) {
-            res.status(500).send(error);
+            res.status(404).send(error);
         }
     },
 };
