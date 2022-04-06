@@ -15,8 +15,8 @@ const Movie = props => {
         style={{ objectFit: 'cover', height: '82%' }}
         src={props.imgUrl}
       />
-        <Link to={`/detalle/${props.name}`}>
-      <Card.Body className="w-100" style={{ height: '18%' }}>
+        <Link to={`/detalle/${props.name}`} style={{ height: '18%' }}>
+      <Card.Body className="w-100" >
           <Card.Title className="text-wrap text-center">
             {props.name}
           </Card.Title>
