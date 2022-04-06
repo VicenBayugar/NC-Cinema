@@ -1,35 +1,55 @@
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container, Col, Row } from 'react-bootstrap';
 import RegisterImg from '/img/register-img.png';
 
+const formFields = [
+  {
+    labelForm: 'Nombre',
+    placeholderForm: 'Ingresa tu nombre',
+    typeForm: 'text',
+    name: 'name',
+  },
+  {
+    labelForm: 'Apellido',
+    placeholderForm: 'Ingresa tu apellido',
+    typeForm: 'text',
+    name: 'lastname',
+  },
+  {
+    labelForm: 'Correo electrónico',
+    placeholderForm: 'Ingresa tu correo electrónico',
+    typeForm: 'email',
+    name: 'email',
+  },
+  {
+    labelForm: 'Contraseña',
+    placeholderForm: 'Ingresa tu contraseña',
+    typeForm: 'password',
+    name: 'password',
+  },
+  {
+    labelForm: 'Confirma tu contraseña',
+    placeholderForm: 'ingresa tu contraseña',
+    typeForm: 'password',
+    name: 'repetPassword',
+  },
+];
+
+const formFieldInitialValues = formFields
+  .map(({ name }) => name)
+  .reduce((obj, key) => ({ ...obj, [key]: '' }), {});
+
 export default function RegisterPage() {
-  const labelsForm = [
-    {
-      labelForm: 'Nombre',
-      placeholderForm: 'Ingresa tu nombre',
-      typeForm: 'text',
-    },
-    {
-      labelForm: 'Apellido',
-      placeholderForm: 'Ingresa tu apellido',
-      typeForm: 'text',
-    },
-    {
-      labelForm: 'Correo electrónico',
-      placeholderForm: 'Ingresa tu correo electrónico',
-      typeForm: 'email',
-    },
-    {
-      labelForm: 'Contraseña',
-      placeholderForm: 'Ingresa tu contraseña',
-      typeForm: 'password',
-    },
-    {
-      labelForm: 'Confirma tu contraseña',
-      placeholderForm: 'ingresa tu contraseña',
-      typeForm: 'password',
-    },
-  ];
+  const [form, setForm] = useState(formFieldInitialValues);
+
+  function handleChange(e) {
+    console.log(e.target);
+    console.log(e, 'eee');
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  }
+
+  function handleSubmit() {}
 
   return (
     <Container className="d-flex justify-content-center">
@@ -39,23 +59,31 @@ export default function RegisterPage() {
             ÚNETE
           </h1>
           <p className="fs-6 mb-4">Regístrate y podrás comprar en línea </p>
-          <Form>
-            {labelsForm.map(({ labelForm, placeholderForm, typeForm }) => (
-              <Form.Group className="mb-4" controlId="" key={labelForm}>
-                <Form.Label>{`${labelForm} *`}</Form.Label>
-                <Form.Control
-                  className="border-c-primary"
-                  type={typeForm}
-                  placeholder={placeholderForm}
-                  required
-                />
-              </Form.Group>
-            ))}
+          <Form onSubmit={handleSubmit}>
+            {formFields.map(
+              ({ labelForm, placeholderForm, typeForm, name }) => (
+                <Form.Group className="mb-4" controlId="" key={labelForm}>
+                  <Form.Label>{`${labelForm} *`}</Form.Label>
+                  <Form.Control
+                    className="border-c-primary"
+                    type={typeForm}
+                    name={name}
+                    value={form[name]}
+                    onChange={handleChange}
+                    placeholder={placeholderForm}
+                    required
+                  />
+                </Form.Group>
+              ),
+            )}
             <Form.Group className="mb-4">
               <Form.Label>Tipo de Documento</Form.Label>
               <Form.Select
                 aria-label="Default select example"
-                className="border-c-primary">
+                className="border-c-primary"
+                name="documentType"
+                value={form.documentType}
+                onChange={handleChange}>
                 <option>Selecciona tu tipo de documento</option>
                 <option value="1">DNI</option>
                 <option value="2">Pasaporte</option>
@@ -67,7 +95,11 @@ export default function RegisterPage() {
               <Form.Control
                 className="border-c-primary"
                 type="number"
+                name="documentNumber"
+                value={form.documentNumber}
+                onChange={handleChange}
                 placeholder="Ingresa tu N° de documento"
+                required
               />
             </Form.Group>
             <Form.Group className="mt-5" controlId="">
@@ -75,6 +107,7 @@ export default function RegisterPage() {
                 className="fs-6"
                 type="checkbox"
                 label="DESEO RECIBIR MAILS ESTRENOS Y PROMOCIONES."
+                required
               />
             </Form.Group>
             <Button
