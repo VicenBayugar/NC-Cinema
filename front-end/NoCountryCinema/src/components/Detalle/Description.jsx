@@ -24,7 +24,7 @@ const Description = ({movie}) => {
       </Row>
       <Row>
         <Col xl={6}>
-          <img w src={movie.image} className='img-fluid' alt="imagenPeli" />
+          <img src={movie.image} className='img-fluid' alt="imagenPeli" width={'500px'} />
         </Col >
         <Col xl={6}>
           <Row>
