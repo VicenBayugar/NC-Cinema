@@ -21,15 +21,12 @@ const MoviesContainer = (props) => {
       <h3>{props.title}</h3>
       <hr />
       <Container
-				className="section scrolling-wrapper row flex-row flex-nowrap row-cols-1 row-cols-md-3 p-2 w-100 mh-100
+				className="section scrolling-wrapper row flex-row flex-nowrap row-cols-1 row-cols-md-4 p-2 w-100 mh-100
 "
         style={{ overflowX: "auto", overflowY: "hidden", whiteSpace: "nowrap" }}>
         {movies.map((item) => {
           return <Movie key={item._id} name={item.title} imgUrl={item.image} />
         })}
-        {/* {movies.map((item, index) => {
-          return <Movie key={index} name={item.title} imgUrl={item.image} />;
-        })} */}
       </Container>
     </Container>
   );
