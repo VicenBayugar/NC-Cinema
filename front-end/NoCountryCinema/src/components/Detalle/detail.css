@@ -1,0 +1,22 @@
+td {
+  text-align: left;
+}
+
+
+.contenedor {
+  margin: 2rem 0;
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.row {
+  margin: 1rem;
+  text-align: center;
+  align-items: center;
+}

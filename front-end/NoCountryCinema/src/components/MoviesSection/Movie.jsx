@@ -3,18 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Movie = (props) => {
   return (
-    <Card className='movieCard' style={{ width: '12rem', padding: '0', margin: '5px', height: '100%'}}>
-      <Card.Img variant="top" src={props.imgUrl} style={{objectFit: 'contain', width: 'auto', height: '15em', background: 'black'}}/> 
-      <Card.Body
-        style={{
-          background: 'black',
-          textAlign: 'center',
-          width: '100%',
-          color: '#5BA4CF',
-
-        }}
-      >
-        <Card.Text className='text-wrap'>{props.name}</Card.Text>
+    <Card bg='dark' border='secondary' className='p-2 m-3 ' style={{ width: '17rem', height: '35rem' }}>
+      <Card.Img variant="top" className='img-fluid w-100' style={{objectFit: 'cover', height: '82%'}} src={props.imgUrl} /> 
+      <Card.Body className='w-100' style={{height: '18%'}}>
+        <Card.Title className='text-wrap text-center'>{props.name}</Card.Title>
       </Card.Body>
     </Card>
   );
