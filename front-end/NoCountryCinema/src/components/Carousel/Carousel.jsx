@@ -8,7 +8,7 @@ export const Carro = () => {
     <Carousel>
   <Carousel.Item>
     <img
-      className="d-block w-100 img-test"
+      className="d-block w-100"
       src="https://static.cinemarkhoyts.com.ar/Images/Highlights/437.png"
       alt="First slide"
     />

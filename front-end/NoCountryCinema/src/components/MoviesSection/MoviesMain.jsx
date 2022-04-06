@@ -44,7 +44,7 @@ const MoviesMain = () => {
         <>
           <h3>PELÍCULAS</h3>
           <hr />
-          <CardGroup className="mt-2 ">
+          <CardGroup className="mt-3 ">
             <Row xs={1} md={2} lg={6} className="g-4 justify-content-center">
               {movies.map(item => {
                 return (
