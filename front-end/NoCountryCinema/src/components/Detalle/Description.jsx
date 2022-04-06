@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Row, Table } from 'react-bootstrap'
+import React from 'react'
+import { Col, Container, Row, Table } from 'react-bootstrap'
 import axios from 'axios'
 import './detail.css'
 import ReactPlayer from 'react-player'
 
-const Description = () => {
+const Description = ({movie}) => {
 
-  let query = new URLSearchParams(window.location.search);
-  let movieID = query.get('movieID').toString;
-  console.log(query);
-
-  const [movie, setMovie] = useState(null);
-
-  
   return (
     <>
     {movie &&
     <Container>
-      <Row className='contenedor'>
+      {/* <Row className='contenedor'>
         <ReactPlayer
           url={''}
           width='100%'
@@ -25,18 +18,18 @@ const Description = () => {
           controls
           className='player' />
       </Row>
-      <hr />
+      <hr /> */}
       <Row className='row'>
         <h2>{movie.title} </h2>
       </Row>
       <Row>
         <Col xl={6}>
-          <img w src={''} className='img-fluid' alt="..." />
+          <img w src={movie.image} className='img-fluid' alt="imagenPeli" />
         </Col >
         <Col xl={6}>
           <Row>
             <h3>Sinopsis</h3>
-            <p></p>
+            <p>{movie.resume}</p>
           </Row>
           <Row>
             <Table striped hover variant="dark">
@@ -49,7 +42,7 @@ const Description = () => {
                 </tr>
                 <tr>
                   <td>Idiomas</td>
-                  <td></td>
+                  <td>{movie.language}</td>
                 </tr>
                 <tr>
                   <td>Disponible:</td>
@@ -61,11 +54,11 @@ const Description = () => {
                 </tr>
                 <tr>
                   <td>Género</td>
-                  <td></td>
+                  <td>{movie.genre}</td>
                 </tr>
                 <tr>
                   <td>Reparto:</td>
-                  <td></td>
+                  <td>{movie.actors}</td>
                 </tr>
               </tbody>
             </Table>
