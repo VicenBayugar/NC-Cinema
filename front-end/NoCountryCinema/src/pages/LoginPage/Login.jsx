@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 import { Form, Button, Container, Col, Row } from 'react-bootstrap';
-import LoginImg from '../../../public/img/loginBGimage.jpeg';
+import LoginImg from '/img/loginBGimage.jpeg';
 import { Link } from 'react-router-dom';
 
 export const Login = () => {

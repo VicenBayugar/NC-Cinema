@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container, Col, Row } from 'react-bootstrap';
-import RegisterImg from '../../../public/img/register-img.png';
+import RegisterImg from '/img/register-img.png';
 
 export default function RegisterPage() {
   const labelsForm = [
