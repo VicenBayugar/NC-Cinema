@@ -17,7 +17,7 @@ const MoviesContainer = (props) => {
     obtenerMovies();
   }, []);
   return (
-    <Container className='mt-5'>
+    <Container className="mt-5">
       <h3>{props.title}</h3>
       <hr />
       <Container
@@ -27,7 +27,10 @@ const MoviesContainer = (props) => {
         {movies.map((item) => {
           return <Movie key={item._id} name={item.title} imgUrl={item.image} />
         })}
-			</Container>
+        {/* {movies.map((item, index) => {
+          return <Movie key={index} name={item.title} imgUrl={item.image} />;
+        })} */}
+      </Container>
     </Container>
   );
 };

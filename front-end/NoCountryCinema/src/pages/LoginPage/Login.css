@@ -1,0 +1,32 @@
+img {
+    width: 100%;
+    max-width: 30em;
+    object-fit: contain;
+}
+
+h1{
+    margin: 0;
+}
+
+body{
+    color: white;
+    background-color: #182025 !important;
+    
+}
+p{
+    color: lightgray;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #00C5BC;
+}
+
+.right-side{
+    padding: 0;
+    overflow: hidden
+}

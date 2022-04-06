@@ -8,7 +8,6 @@ import MoviesMain from './components/MoviesSection/MoviesMain';
 function App() {
   return (
     <div className="App">
-      <Header />
       <Carro />
       <MoviesMain />
       <MoviesContainer title='PRÓXIMOS ESTRENOS'/>
