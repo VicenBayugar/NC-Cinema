@@ -20,3 +20,16 @@ td {
   text-align: center;
   align-items: center;
 }
+
+#p{
+  text-align: center;
+  size-adjust: inherit;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+#disponible{
+  text-align: center;
+
+}
