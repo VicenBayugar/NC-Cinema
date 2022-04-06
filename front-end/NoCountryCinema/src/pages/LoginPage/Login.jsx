@@ -14,10 +14,10 @@ export const Login = () => {
         <Col
           lg={6}
           className="d-flex flex-column justify-content-center align-items-center">
-          <h1 className="f-inter text-center fs-1 fw-bold lh-sm c-primary">
+          <h1 className="f-inter text-center fs-1 fw-bold lh-sm c-primary h1">
             INICIAR SESIÓN
           </h1>
-          <p className="fs-6 mb-4">
+          <p className="fs-6 mb-4 p">
             Si aún no tienes cuenta{' '}
             <Link to="/register">
               <b>regístrate aqui</b>
@@ -51,7 +51,7 @@ export const Login = () => {
           </Form>
         </Col>
         <Col lg={6} className="right-side">
-          <img src={LoginImg} />
+          <img  className = "img"src={LoginImg} />
         </Col>
       </Row>
     </Container>
