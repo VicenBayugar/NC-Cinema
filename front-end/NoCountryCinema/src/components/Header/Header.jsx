@@ -33,10 +33,8 @@ const Header = () => {
                 Todas las categorías
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link to="/login">
-              
-                <i className="bi bi-person-circle text-light"></i>
-              
+            <Nav.Link href="/login">
+              <i className="bi bi-person-circle text-light"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
