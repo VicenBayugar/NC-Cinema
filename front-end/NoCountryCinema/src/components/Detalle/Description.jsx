@@ -18,7 +18,7 @@ const Description = ({movie}) => {
           controls
           className='player' />
       </Row>
-      <Row className='row'>
+      <Row className='row-tittle'>
         <h2>{movie.title} </h2>
       </Row>
       <Row>
@@ -78,8 +78,8 @@ const Description = ({movie}) => {
                   <td id='disponible'>2D</td>
                   <td id='disponible'>3D</td>
                 </tr>
-                
-                
+
+
               </tbody>
             </Table>
           </Row>
