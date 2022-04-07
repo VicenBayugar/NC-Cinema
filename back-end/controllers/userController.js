@@ -1,4 +1,4 @@
-const dbMongo = require("../models/movies");
+const dbMongo = require("../models/users");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
@@ -11,13 +11,18 @@ const userController = {
             return res.status(400).json({ errors: errors.array() });
         }
         //extrae el mail y el password
-        const { email, password } = req.body;
+        const { email, password, documento } = req.body;
 
         try {
             //revisa que el usuario sea único
             let user = await dbMongo.findOne({ email });
             if (user) {
                 return res.status(400).json({ msg: "El usuario ya existe" });
+            }
+
+            let doc = await dbMongo.findOne({ documento });
+            if (doc) {
+                return res.status(400).json({ msg: "El documento ya existe" });
             }
 
             //crea el usuario

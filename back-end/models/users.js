@@ -6,7 +6,7 @@ const UserSchema = new monogoose.Schema(
         name:{
             type:String
         },
-        apellido:{
+        last_name:{
             type:String
         },
         email:{
@@ -17,8 +17,8 @@ const UserSchema = new monogoose.Schema(
             type:String
         },
         documento:{
-            type:String,
-            unique: true
+            type: Number,
+            unique: true 
         },
         typeDoc:{
             type:String
