@@ -8,7 +8,7 @@ const Description = ({movie}) => {
 
   return (
     <>
-    {movie &&
+    {movie && (
     <Container>
        <Row className='contenedor'>
         <ReactPlayer
@@ -88,7 +88,8 @@ const Description = ({movie}) => {
       <Row>
 
       </Row>
-    </Container>}
+    </Container>
+    )}
     </>
   )
 }
