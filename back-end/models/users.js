@@ -11,7 +11,7 @@ const UserSchema = new monogoose.Schema(
         },
         email:{
             type:String,
-            type: unique    
+            unique: true    
         },
         password:{
             type:String
