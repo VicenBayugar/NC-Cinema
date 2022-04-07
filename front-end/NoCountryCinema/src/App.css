@@ -24,6 +24,10 @@ hr {
   font-family: 'Inter', sans-serif;
 }
 
+.f-spartan {
+  font-family: 'Spartan', sans-serif;
+}
+
 .button-primary {
   background-color: var(--primary-color);
   border-color: var(--primary-color);

@@ -1,13 +1,13 @@
-import React from 'react'
-import { Col, Container, Row, Table } from 'react-bootstrap'
-import axios from 'axios'
-import './detail.css'
-import ReactPlayer from 'react-player'
+import React from 'react';
+import { Col, Container, Row, Table } from 'react-bootstrap';
+import axios from 'axios';
+import './detail.css';
+import ReactPlayer from 'react-player';
 
-const Description = ({movie}) => {
-
+const Description = ({ movie }) => {
   return (
     <>
+
     {movie && (
     <Container>
        <Row className='contenedor'>
@@ -90,8 +90,9 @@ const Description = ({movie}) => {
       </Row>
     </Container>
     )}
-    </>
-  )
-}
 
-export default Description
+    </>
+  );
+};
+
+export default Description;

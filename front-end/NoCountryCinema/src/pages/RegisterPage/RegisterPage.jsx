@@ -62,7 +62,7 @@ export default function RegisterPage() {
           <Form onSubmit={handleSubmit}>
             {formFields.map(
               ({ labelForm, placeholderForm, typeForm, name }) => (
-                <Form.Group className="mb-4" controlId="" key={labelForm}>
+                <Form.Group className="mb-4" controlId={name} key={labelForm}>
                   <Form.Label>{`${labelForm} *`}</Form.Label>
                   <Form.Control
                     className="border-c-primary"
