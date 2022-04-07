@@ -15,6 +15,15 @@
     border-radius: 100px !important;
 }
 
+.movieTitle{
+    color: white;
+    text-decoration: none;
+}
+
+.movieTitle:hover{
+    color: #00C5BC;
+}
+
 
 @supports (scrollbar-color: red black) {
     *{

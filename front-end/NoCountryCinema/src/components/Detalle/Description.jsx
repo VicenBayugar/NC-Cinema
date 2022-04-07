@@ -22,8 +22,8 @@ const Description = ({movie}) => {
         <h2>{movie.title} </h2>
       </Row>
       <Row>
-        <Col xl={6}>
-          <img src={movie.image} className='img-fluid' alt="imagenPeli" width={'500px'} />
+        <Col xl={6} className='d-flex justify-content-center pb-4 pt-4'>
+          <img src={movie.image} className='img-fluid' alt="imagenPeli" />
         </Col >
         <Col xl={6}>
           <Row>
@@ -64,12 +64,12 @@ const Description = ({movie}) => {
                   <td >Idiomas: </td>
                   <td className='col-5'>{movie.language.map((mov, idx)=>{
                     return(
-                      <p id='p'>{mov}</p>
+                      <p id='p' key={idx}>{mov}</p>
                     )
                   })}</td>
                   <td className='col-5'>{movie.tags.map((mov, idx)=>{
                     return(
-                      <p id='p'>{mov}</p>
+                      <p id='p' key={idx}>{mov}</p>
                     )
                   })}</td>
                 </tr>

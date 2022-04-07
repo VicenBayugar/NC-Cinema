@@ -9,18 +9,18 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
-    <Container>
+    <Container className=''>
       <Row>
         <Col
           lg={6}
-          className="d-flex flex-column justify-content-center align-items-center">
+          className="d-flex flex-column justify-content-center align-items-center pb-4 pt-4">
           <h1 className="f-inter text-center fs-1 fw-bold lh-sm c-primary h1">
             INICIAR SESIÓN
           </h1>
           <p className="fs-6 mb-4 p">
             Si aún no tienes cuenta{' '}
-            <Link to="/register">
-              <b>regístrate aqui</b>
+            <Link to="/register" className='registrate'>
+              regístrate aqui
             </Link>
           </p>
           <Form>
@@ -50,7 +50,7 @@ export const Login = () => {
             </Button>
           </Form>
         </Col>
-        <Col lg={6} className="right-side">
+        <Col lg={6} className="right-side d-flex justify-content-center">
           <img  className = "img"src={LoginImg} />
         </Col>
       </Row>
