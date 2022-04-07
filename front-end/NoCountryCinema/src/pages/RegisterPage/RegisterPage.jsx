@@ -52,9 +52,9 @@ export default function RegisterPage() {
   function handleSubmit() {}
 
   return (
-    <Container className="d-flex justify-content-center">
+    <Container className="d-flex justify-content-center flex-column">
       <Row>
-        <Col lg={5} className="pt-5">
+        <Col lg={5} className="pt-3 pb-3 d-flex flex-column align-items-center justify-content-center">
           <h1 className="f-inter text-center fs-1 fw-bold lh-sm c-primary">
             ÚNETE
           </h1>
@@ -117,8 +117,8 @@ export default function RegisterPage() {
             </Button>
           </Form>
         </Col>
-        <Col lg={7} className="text-end">
-          <img src={RegisterImg} />
+        <Col lg={7} className="d-flex justify-content-center">
+          <img src={RegisterImg} className='img-fluid' />
         </Col>
       </Row>
     </Container>

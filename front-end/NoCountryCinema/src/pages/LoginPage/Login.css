@@ -8,22 +8,18 @@
     margin: 0;
 }
 
-body{
-    color: white;
-    background-color: #182025 !important;
-    
-}
 .p{
     color: lightgray;
 }
 
-a{
-    color: white;
-    text-decoration: none;
+.registrate{
+    color: white !important;
+    font-weight: bold;
+    text-decoration: none !important;
 }
 
-a:hover{
-    color: #00C5BC;
+.registrate:hover{
+    color: #00C5BC !important;
 }
 
 .right-side{
