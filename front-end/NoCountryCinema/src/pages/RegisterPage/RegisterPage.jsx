@@ -64,7 +64,7 @@ const formFieldInitialValues = formFields
   );
 
 const validateDocument = str => {
-  if (str.length <= 8) {
+  if (str.length < 8) {
     return 'Debe tener 8 caracteres';
   }
 };
