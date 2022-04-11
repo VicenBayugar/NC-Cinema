@@ -2,7 +2,11 @@ import React from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogoNC from '/img/logo_NCinema.png';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+
+
+let token = sessionStorage.getItem('token')
+
 
 const Header = () => {
   return (
@@ -33,9 +37,9 @@ const Header = () => {
                 Todas las categorías
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/login">
+            <Link to={"/login"}>
               <i className="bi bi-person-circle text-light"></i>
-            </Nav.Link>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
