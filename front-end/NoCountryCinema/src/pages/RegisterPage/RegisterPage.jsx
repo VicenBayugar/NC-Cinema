@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button, Container, Col, Row } from 'react-bootstrap';
 import AlertMessage from '../../components/AlertMessage/AlertMessage';
 import RegisterImg from '/img/register-img.png';
 import axios from 'axios';
 
+
 const regexEmail =
   /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+
+  
 // array para crear dinámicamente los inputs del formulario
 const formFields = [
   {
@@ -70,6 +75,8 @@ const validateDocument = str => {
 };
 
 export default function RegisterPage() {
+
+  const navigate = useNavigate();
   const [form, setForm] = useState(formFieldInitialValues);
   const [formErrors, setFormErrors] = useState(formFieldInitialValues);
   const [state, setState] = useState({
@@ -82,7 +89,7 @@ export default function RegisterPage() {
   }
 
   const handleSubmit = async e => {
-    event.preventDefault();
+    e.preventDefault();
     setState({ status: 'pending', error: '' });
     try {
       await axios.post('http://localhost:3005/api/users/createUser', {
@@ -92,9 +99,11 @@ export default function RegisterPage() {
         password: form.password,
         documento: form.documentNumber,
         typeDoc: form.documentType,
-      });
+
+      })
       setState({ status: 'success', error: '' });
       // console.log(response);
+
     } catch (e) {
       // console.log(e.response.data.errors.documento.msg);
       // console.log(e.response.data.msg);
@@ -110,7 +119,10 @@ export default function RegisterPage() {
       setState({ status: 'rejected', error: formattedError });
     } finally {
       // setState({ status: '', error: '' });
+
     }
+    //redireccionamiento hacia el login usando el hook useNavigate de React router DOM
+    navigate('/login')
   };
 
   const isLoading = state.status === 'pending';
@@ -218,8 +230,10 @@ export default function RegisterPage() {
             <Button
               disabled={errorExist}
               className="mt-5 button-primary w-100 f-inter fw-bold"
-              type="submit">
+              type="submit"
+              >
               {isLoading ? 'cargando..' : 'REGISTRARSE'}
+              
             </Button>
           </Form>
         </Col>

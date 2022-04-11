@@ -3,12 +3,61 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 import { Form, Button, Container, Col, Row } from 'react-bootstrap';
 import LoginImg from '/img/loginBGimage.jpeg';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import axios from 'axios';
+import sweetAlert from 'sweetalert'
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+ 
+
+  const handleSubmit= async (e)=> {
+    e.preventDefault();
+    const endpoint = "http://localhost:3005/api/users/login"
+    const email =  e.target.email.value 
+    const password = e.target.password.value;
+    console.log(email);
+    console.log(password);
+    const filter =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
+      //comparo que los campos mo esten vacios
+    if (email === "" || password === "") {
+      sweetAlert("Campos vacios");
+      return;
+    }
+    //comparo que el correo sea válido
+    if (email !== "" && !filter.test(email)) {
+      sweetAlert("Correo no válido");
+      return;
+    }
+
+    //envio peticion para consultar si el usuario esta registrado 
+    await axios.post(endpoint,{
+      'email': email, 
+      'password': password
+    })
+    //recibimoy y guardamos el token en el sessionStrorge del navegador
+    //y nos redirige a la ultima ubicacion
+    .then((res)=>{
+      const tokenRecibido = res.data.token;
+      sessionStorage.setItem("token", tokenRecibido)
+      navigate(-1)
+
+    })
+    .catch((error)=>{
+      sweetAlert ("El usuario no existe");
+
+    })
+    
+
+  }
+  let token = sessionStorage.getItem('token')
+  
   return (
+    <>
+    {/**si tengo ek token el logo de usuario me dirige a la pagina profile donde el usuario puede ver sus compras */}
+    {token && <Navigate to={'/profile'}/>}
     <Container className=''>
       <Row>
         <Col
@@ -23,23 +72,25 @@ export const Login = () => {
               regístrate aqui
             </Link>
           </p>
-          <Form>
+          <Form onSubmit={handleSubmit} method="POST">
             <Form.Group
               className="mb-3 w-100"
-              controlId="exampleForm.ControlInput1">
+              >
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
-                onChange={e => setEmail(e.target.value)}
+                name='email'
+                autoComplete='username'
               />
             </Form.Group>
             <Form.Group
               className="mb-3 w-100"
-              controlId="exampleForm.ControlInput1">
+              >
               <Form.Label>Contraseña</Form.Label>
               <Form.Control
                 type="password"
-                onChange={e => setPassword(e.target.value)}
+                name='password'
+                autoComplete='current-password'
               />
             </Form.Group>
             <Button
@@ -55,5 +106,6 @@ export const Login = () => {
         </Col>
       </Row>
     </Container>
+    </>
   );
 };
