@@ -15,19 +15,19 @@ p {
 }
 
 iframe {
-  border: #00acee 2px solid;
+  border: rgb(0, 218, 207) 2px solid;
 }
 /* estilos iconos footer */
 .centrarFooter {
   text-align: center;
 }
 
-.bi {
-  color: #00acee;
+.redes {
+  color: rgb(0, 218, 207);
   font-size: 45px;
 }
 
-.bi:hover {
+.redes:hover {
   color: white;
 }
 

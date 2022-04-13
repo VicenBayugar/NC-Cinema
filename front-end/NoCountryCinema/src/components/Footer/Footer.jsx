@@ -26,7 +26,7 @@ const Footer = () => {
                   variant="link"
                   href="https://www.twitter.com"
                   target="_blank">
-                  <i className="bi bi-twitter" color="#00acee"></i>
+                  <i className="bi bi-twitter redes" color="#00acee"></i>
                 </Button>
               </Col>
               <Col className="centrarFooter">
@@ -35,7 +35,7 @@ const Footer = () => {
                   variant="link"
                   href="https://www.facebook.com"
                   target="_blank">
-                  <i className="bi bi-facebook"></i>
+                  <i className="bi bi-facebook  redes"></i>
                 </Button>
               </Col>
               <Col className="centrarFooter">
@@ -44,7 +44,7 @@ const Footer = () => {
                   variant="link"
                   href="https://www.instagram.com"
                   target="_blank">
-                  <i className="bi bi-instagram"></i>
+                  <i className="bi bi-instagram  redes"></i>
                 </Button>
               </Col>
             </Row>
