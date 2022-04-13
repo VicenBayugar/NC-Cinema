@@ -1,6 +1,7 @@
-import React from 'react'
+import React ,{useEffect, useState }  from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import {Button, Container, Row, Table, Col, Card } from 'react-bootstrap';
+import axios from 'axios';
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -11,10 +12,23 @@ const Profile = () => {
 
   }
 
+  const [data, setData] = useState()
+  const idUser = sessionStorage.getItem('id');
+
+  useEffect(() => {
+    const obtenerUser = async () => {
+      const data = await fetch(`http://localhost:3005/api/users/${idUser}`);
+      const userObtenidas = await data.json();
+      setData(userObtenidas);
+    };
+    obtenerUser();
+  }, []);
+
   let token = sessionStorage.getItem('token')
   return (
       <>
       {!token && <Navigate to={'/login'}/>}
+      {data && 
       <Container>
         <Container  className="text-end"><Button style={{
           color:"whitesmoke"
@@ -30,7 +44,7 @@ const Profile = () => {
                 <tbody>
                   <tr>
                     <td>Nombre: </td>
-                    <td>Vicente</td>
+                    <td>{data.user.last_name}</td>
                     <td></td>
                   </tr>
                   <tr>
@@ -92,6 +106,7 @@ const Profile = () => {
           </Col>
         </Row>
       </Container>
+}
       </>
     );
   };
