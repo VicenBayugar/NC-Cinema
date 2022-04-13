@@ -8,24 +8,24 @@ import { useNavigate } from 'react-router-dom';
 const Description = ({ movie }) => {
   return (
     <>
-
       {movie && (
         <Container>
-          <Row className='contenedor'>
+          <Row className="contenedor">
             <ReactPlayer
               url={movie.trailer}
-              width='100%'
-              height='100%'
+              width="100%"
+              height="100%"
               controls
-              className='player' />
+              className="player"
+            />
           </Row>
-          <Row className='row-tittle'>
+          <Row className="row-tittle">
             <h2>{movie.title} </h2>
           </Row>
           <Row>
-            <Col xl={6} className='d-flex justify-content-center pb-4 pt-4'>
-              <img src={movie.image} className='img-fluid' alt="imagenPeli" />
-            </Col >
+            <Col xl={6} className="d-flex justify-content-center pb-4 pt-4">
+              <img src={movie.image} className="img-fluid" alt="imagenPeli" />
+            </Col>
             <Col xl={6}>
               <Row>
                 <h3>Sinopsis</h3>
@@ -33,8 +33,7 @@ const Description = ({ movie }) => {
               </Row>
               <Row>
                 <Table striped hover variant="dark">
-                  <thead>
-                  </thead>
+                  <thead></thead>
                   <tbody>
                     <tr>
                       <td>Director: </td>
@@ -62,36 +61,45 @@ const Description = ({ movie }) => {
                       <td></td>
                     </tr>
                     <tr>
-                      <td >Idiomas: </td>
-                      <td className='col-5'>{movie.language.map((mov, idx) => {
-                        return (
-                          <p id='p' key={idx}>{mov}</p>
-                        )
-                      })}</td>
-                      <td className='col-5'>{movie.tags.map((mov, idx) => {
-                        return (
-                          <p id='p' key={idx}>{mov}</p>
-                        )
-                      })}</td>
+                      <td>Idiomas: </td>
+                      <td className="col-5">
+                        {movie.language.map((mov, idx) => {
+                          return (
+                            <p id="p" key={idx}>
+                              {mov}
+                            </p>
+                          );
+                        })}
+                      </td>
+                      <td className="col-5">
+                        {movie.tags.map((mov, idx) => {
+                          return (
+                            <p id="p" key={idx}>
+                              {mov}
+                            </p>
+                          );
+                        })}
+                      </td>
                     </tr>
                     <tr>
                       <td>Disponible: </td>
-                      <td id='disponible'>2D</td>
-                      <td id='disponible'>3D</td>
+                      <td id="disponible">2D</td>
+                      <td id="disponible">3D</td>
                     </tr>
-
-
                   </tbody>
                 </Table>
               </Row>
             </Col>
           </Row>
-          <Container className='text-center mb-2'>
-            <Button onClick={handlerClick}>Comprar</Button>
+          <Container className="text-center mb-2">
+            <Button
+            // onClick={handlerClick}
+            >
+              Comprar
+            </Button>
           </Container>
         </Container>
       )}
-
     </>
   );
 };
