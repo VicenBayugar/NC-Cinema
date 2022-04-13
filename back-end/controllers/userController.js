@@ -118,6 +118,7 @@ const userController = {
     }
   },
   detailUser: async (req, res, next) => {
+    
     try {
       const user = await dbMongo.findById(req.params.id);
       // return res.send("movies id")
