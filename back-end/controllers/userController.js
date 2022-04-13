@@ -100,13 +100,18 @@ const userController = {
         {
           expiresIn: 3600,
         },
-        (error, token) => {
+        (error, token , payload) => {
           if (error) throw error;
 
           //mensaje de confirmación
-          res.json({ token });
+          res.json({ token , user});
+          
         }
       );
+    //   res.header('auth-token', token).json({
+    //     error: null,
+    //     data: {token}
+    // })
     } catch (error) {
       console.log(error);
       res.status(404).send("Credenciales inválidas");
@@ -116,6 +121,7 @@ const userController = {
     try {
       const user = await dbMongo.findById(req.params.id);
       // return res.send("movies id")
+      console.log(user)
       return res.status(200).json({
         user,
       });
