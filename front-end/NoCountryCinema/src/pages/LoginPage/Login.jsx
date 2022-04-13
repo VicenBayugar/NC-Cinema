@@ -16,8 +16,6 @@ export const Login = () => {
     const endpoint = 'http://localhost:3005/api/users/login';
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email);
-    console.log(password);
     const filter =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
     //comparo que los campos mo esten vacios
@@ -41,7 +39,10 @@ export const Login = () => {
       //y nos redirige a la ultima ubicacion
       .then(res => {
         const tokenRecibido = res.data.token;
+        const idRecibido = res.data.user._id;
         sessionStorage.setItem('token', tokenRecibido);
+        sessionStorage.setItem('id',idRecibido);
+
         navigate(-1);
       })
       .catch(error => {
