@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
     //Leer el token de header
-    let token = req.header("x-auth-token");
+    let token = sessionStorage.getItem('token');
 
     //Revisar si no hay token
     if (!token) {
