@@ -5,8 +5,8 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import MovieDetails from './pages/MovieDetail/MovieDetails';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
-import {Login} from './pages/LoginPage/Login'
-
+import {Login} from './pages/LoginPage/Login';
+import Promociones from './pages/Promociones';
 
 function App() {
   return (
@@ -18,6 +18,9 @@ function App() {
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/detalle/:title' element={<MovieDetails />} />
+
+          <Route path='/page/Promociones' element={<Promociones />} />
+
         </Routes>
         <Footer />
       </Router>

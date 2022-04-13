@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Movie from './Movie';
 import React, {useState, useEffect} from 'react';
-import './MovieContainer.css'
+import './MovieContainer.css';
 
 const MoviesContainer = (props) => {
   const [movies, setMovies] = useState([]);
