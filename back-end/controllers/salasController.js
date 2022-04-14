@@ -27,14 +27,13 @@ const salasController = {
     reserva: async (req, res) => {
         try {
             // Traigo la sala por id
-            const sala = await Sala.findById("6252da12946fb604c307d988");
-            //Defino que butacas es el array de butacas dentro de sala
+            const sala = await Sala.findById("625812391d3db97c5d586442");
+            //Defino que butacas, es el array de butacas dentro de sala
             const butacas = sala.butacas;
             // Elijo el asiento por  parametro number
             const number = req.body.number;
             //Busco el asiento que corresponda con el number
             const asiento = butacas.find((el) => el.number == number);
-            // console.log(asiento.state);
             //Si el estado del asiento no existe(false), lo cambiamos a true y visceversa
             asiento.state = !asiento.state ? true : false;
             //Guardamos las modificaciones
