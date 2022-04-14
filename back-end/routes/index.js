@@ -7,6 +7,8 @@ routes.post('/create', controller.moviesCreate);
 routes.get('/', controller.index);
 routes.get('/:id', controller.moviesId);
 routes.put('/:id', controller.moviesUpdate);
+routes.get('/:id/butacas', controller.moviesButacas);
+routes.put('/:id/butacas', controller.updateButacas);
 routes.delete('/:id', controller.moviesDelete);
 
 

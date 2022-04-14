@@ -42,18 +42,56 @@ const controller = {
     },
     moviesUpdate: async (req, res, next) => {
         try {
-            const movie = await dbMongo.findByIdAndUpdate(
-                req.params.id,
-                req.body
-            );
-            const movieUpdate = await movie.save();
-            // return res.send("movies update")
+            const movie = await dbMongo
+                .findById(req.params.id)
+                .updateOne(req.body);
             return res.status(200).json({
-                movieUpdate,
+                movie,
             });
         } catch (error) {
             console.log(error);
             res.status(404).send("Error consulta db home");
+        }
+    },
+    moviesButacas: async (req, res) => {
+        try {
+            const movie = await dbMongo.findById(req.params.id);
+            // .updateOne(req.body);
+            // console.log(movie.butacas);
+
+            const disponibles = movie.butacas.filter(butaca => butaca.state === false)
+            console.log(disponibles);
+
+
+
+            return res.status(200).json({
+                butacas: movie.butacas, disponibles
+            });
+        } catch (error) {
+            console.log(error);
+            res.status(404).send("Error consulta db  butaca");
+        }
+    },
+    updateButacas: async (req, res) => {
+        try {
+            const movie = await dbMongo.findById(req.params.id);
+            //Defino que butacas, es el array de butacas dentro de sala
+            const butacas = movie.butacas;           
+            // Elijo el asiento por  parametro number
+            const number = req.body.number;
+            //Busco el asiento que corresponda con el number
+            const butaca = butacas.find((el) => el.number == number);
+            //Si el estado del butaca no existe(false), lo cambiamos a true y visceversa
+            butaca.state = !butaca.state ? true : false;
+            //Guardamos las modificaciones
+            movie.save();
+
+            return res.status(200).json({
+                butacas: movie.butacas,
+            });
+        } catch (error) {
+            console.log(error);
+            res.status(404).send("Error consulta db upadate butaca");
         }
     },
     moviesDelete: async (req, res, next) => {

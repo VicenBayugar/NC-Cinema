@@ -47,7 +47,12 @@ const movieSchema = new monogoose.Schema(
         },
         language:{
             type: [String]
-        }
+        },
+        butacas:  [{ 
+            number: Number,
+            state: Boolean,
+            reservation:{type: Date, required: true, default: Date.now } 
+        }]
 
         
     },
