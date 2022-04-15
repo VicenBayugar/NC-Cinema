@@ -19,7 +19,7 @@ function App() {
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/detalle/:title' element={<MovieDetails />} />
 
-          <Route path='/page/Promociones' element={<Promociones />} />
+<Route path='/Promociones' element={<Promociones />} />
 
         </Routes>
         <Footer />
