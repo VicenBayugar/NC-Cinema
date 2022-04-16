@@ -11,6 +11,7 @@ const MovieDetails = () => {
       const data = await fetch('http://localhost:3005/api/movies');
       const moviesObtenidas = await data.json();
       const movieFinal = moviesObtenidas.response.filter(movie => movie.title == title)
+      // console.log(movieFinal[0].butacas);
       setMovie(movieFinal[0]);
     };
     obtenerMovie();

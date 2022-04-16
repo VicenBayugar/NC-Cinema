@@ -25,3 +25,47 @@ td {
 #disponible {
   text-align: center;
 }
+/* ------- SALA / BUTACA ------- */
+.sala-container{
+  margin-bottom: 2.5rem;
+}
+
+.pantalla-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.pantalla-texto {
+  margin-top: 1rem;
+  text-align: center;
+  background-color: red;
+  width: 75%;
+}
+
+.butaca-fila {
+  display: flex;
+  /* width: 50%; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-bottom: .3rem;
+}
+.butaca-numero{
+  margin: 0;
+  display: flex;
+  padding-right: 0.1rem;
+}
+.butaca-asiento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: -0.75rem;
+  width: 1.4rem;
+  height: 1.35rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  background-color: red;
+  border-radius: 50%;
+}
+@media (min-width: 379px) {
+}
