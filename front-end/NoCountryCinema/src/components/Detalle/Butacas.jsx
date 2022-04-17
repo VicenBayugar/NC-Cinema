@@ -4,8 +4,10 @@ import './detail.css';
 const Butaca = props => {
   return (
     <>
-      <div className="butaca-asiento">
-        <p className="butaca-numero">{props.number}</p>
+      <div className="butaca-fila">
+        <div className={`butaca-asiento ${props.state} `}>
+          <p className="butaca-numero">{props.number}</p>
+        </div>
       </div>
     </>
   );
