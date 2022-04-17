@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown,Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogoNC from '/img/logo_NCinema.png';
 import { Link, Navigate } from 'react-router-dom';
@@ -9,6 +9,10 @@ let token = sessionStorage.getItem('token')
 
 
 const Header = () => {
+  const user = {
+    "name": "eze",
+    "role": "admin"
+  }
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -37,9 +41,31 @@ const Header = () => {
                 Todas las categorías
               </NavDropdown.Item>
             </NavDropdown>
-            <Link to={"/login"}>
-              <i className="bi bi-person-circle text-light"></i>
-            </Link>
+            {user.name ? 
+            <Dropdown>
+              <Dropdown.Toggle className='btn btn-dark btn-outline-secondary'  id="dropdown-basic">
+                {user.name}
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                <Link to="/profile/" className="dropdown-item">
+                  <span>Profile</span>
+                </Link>
+                {
+                  user.role === "admin" &&
+                  
+                    <Link to="/dashboard/" className="dropdown-item">
+                      <span>Dashboard</span>
+                    </Link>
+                 
+                }
+              </Dropdown.Menu>
+            </Dropdown>
+            :
+            <Nav.Link href="/login">Login</Nav.Link>
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
