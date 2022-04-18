@@ -40,8 +40,10 @@ export const Login = () => {
       .then(res => {
         const tokenRecibido = res.data.token;
         const idRecibido = res.data.user._id;
+        const roleRecibido = res.data.user.role;
         sessionStorage.setItem('token', tokenRecibido);
         sessionStorage.setItem('id',idRecibido);
+        sessionStorage.setItem('role', roleRecibido)
 
         navigate(-1);
       })
