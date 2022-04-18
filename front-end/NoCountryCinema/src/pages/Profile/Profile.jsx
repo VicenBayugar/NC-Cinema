@@ -6,21 +6,10 @@ import { Button, Container, Row, Table, Col, Card } from 'react-bootstrap';
 const Profile = () => {
   const navigate = useNavigate();
 
-  
-  function handlerClick(e) {
-    e.preventDefault();
-    if(idUser){
-      sessionStorage.clear();
-      window.location.reload(true)
-    }
-    navigate('/');
-  }
+
+
 
   const [data, setData] = useState();
-  const idUser = sessionStorage.getItem('id');
-  
-  
-  
 
   useEffect(() => {
     const obtenerUser = async () => {
@@ -30,26 +19,18 @@ const Profile = () => {
     };
     obtenerUser();
   }, []);
-  
+
+  let idUser = sessionStorage.getItem('id');
   let token = sessionStorage.getItem('token');
+  let role = sessionStorage.getItem('role')
 
   return (
     <>
       {!token && <Navigate to={'/login'} />}
+      {token && role === 'admin"' && <Navigate to={'/dashboard'}/>}
       {data && (
+
         <Container>
-          <Container className="text-end">
-          
-          <Button
-              style={{
-                color: 'whitesmoke',
-              }}
-              size="xs"
-              variant="outline"
-              onClick={handlerClick}>
-              Cerrar Sesión
-            </Button>
-          </Container>
           <Row className="row-tittle text-center">
             <h2 className="mt-1">Perfil</h2>
           </Row>

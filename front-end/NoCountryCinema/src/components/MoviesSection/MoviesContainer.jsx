@@ -11,6 +11,7 @@ const MoviesContainer = (props) => {
     const obtenerMovies = async () => {
       const data = await fetch('http://localhost:3005/api/movies');
       const moviesObtenidas = await data.json();
+      sessionStorage.setItem('movies', moviesObtenidas.response);
       const moviesFinal = moviesObtenidas.response.filter(movie => movie.premiere == true)
       setMovies(moviesFinal);
     };
