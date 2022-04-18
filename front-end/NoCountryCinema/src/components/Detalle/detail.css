@@ -25,3 +25,96 @@ td {
 #disponible {
   text-align: center;
 }
+/* ------- SALA / BUTACA ------- */
+.sala-container{
+  
+  display: block;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.pantalla-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.pantalla-texto {
+  margin-top: 1rem;
+  text-align: center;
+  background-color: red;
+  width: 75%;
+}
+
+.butaca-fila {
+  display: flex;
+  /* width: 50%; */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: .3rem;
+}
+.butaca-numero{
+  margin: 0;
+  display: flex;
+  padding-right: 0.1rem;
+}
+.butaca-asiento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: -0.75rem;
+  width: 1.4rem;
+  height: 1.35rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  background-color: aqua;
+  border-radius: 50%;
+}
+.false{
+  background-color: red
+}
+.true{
+  background: green;
+}
+
+/* .false{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: -0.75rem;
+  width: 1.4rem;
+  height: 1.35rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background-color: yellow;
+}
+
+.true{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: -0.75rem;
+  width: 1.4rem;
+  height: 1.35rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background: green;
+} */
+
+
+@media (min-width: 371px) {
+  .sala-container{
+    display: block;
+    width: 400px;
+    margin: 2rem auto;
+  }
+  .butaca-asiento {
+    
+    width: 1.8rem;
+    height: 1.8rem;
+   
+  }
+
+}

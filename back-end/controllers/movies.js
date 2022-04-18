@@ -44,7 +44,7 @@ const controller = {
         try {
             const movie = await dbMongo
                 .findById(req.params.id)
-                .updateOne(req.body);
+                .updateOne({...req.body});
             return res.status(200).json({
                 movie,
             });

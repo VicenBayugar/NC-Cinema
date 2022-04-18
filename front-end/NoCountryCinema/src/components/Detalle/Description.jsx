@@ -4,8 +4,11 @@ import axios from 'axios';
 import './detail.css';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
+import Butaca from './Butacas';
 
 const Description = ({ movie }) => {
+  const butacas = movie.butacas;
+  
   return (
     <>
       {movie && (
@@ -91,12 +94,36 @@ const Description = ({ movie }) => {
               </Row>
             </Col>
           </Row>
+          <Row>
+            <Col xl={6} className="px-0">
+              <div className="sala-container">
+                <div className="pantalla-container">
+                  <p className="pantalla-texto">PANTALLA</p>
+                </div>
+                <div className="butaca-container">
+                  <div className="butaca-fila">
+                    {butacas.map(butaca => (
+                      
+                      <Butaca
+                        key={butaca._id}
+                        number={butaca.number}
+                        className={`${butaca.state} `}
+                      />
+                      
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col xl={6} className="px-0"></Col>
+          </Row>
           <Container className="text-center mb-2">
             <Button
             // onClick={handlerClick}
             >
               Comprar
             </Button>
+            <Container></Container>
           </Container>
         </Container>
       )}
