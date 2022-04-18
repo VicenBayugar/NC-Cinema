@@ -43,13 +43,13 @@ export const Login = () => {
         const roleRecibido = res.data.user.role;
         sessionStorage.setItem('token', tokenRecibido);
         sessionStorage.setItem('id',idRecibido);
-        sessionStorage.setItem('role', roleRecibido)
-
-        navigate(-1);
+        window.location.reload(true)
+        // navigate(-1);
       })
       .catch(error => {
         sweetAlert({ title: 'El usuario no existe', icon: 'error' });
       });
+      
   };
   let token = sessionStorage.getItem('token');
 

@@ -9,7 +9,10 @@ const Profile = () => {
   
   function handlerClick(e) {
     e.preventDefault();
-    sessionStorage.clear();
+    if(idUser){
+      sessionStorage.clear();
+      window.location.reload(true)
+    }
     navigate('/');
   }
 
@@ -27,7 +30,6 @@ const Profile = () => {
     };
     obtenerUser();
   }, []);
-  
   
   let token = sessionStorage.getItem('token');
 
