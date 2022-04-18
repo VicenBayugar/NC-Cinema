@@ -7,7 +7,11 @@ const Profile = () => {
   const navigate = useNavigate();
   function handlerClick(e) {
     e.preventDefault();
-    sessionStorage.clear();
+    if(idUser){
+      sessionStorage.clear();
+      window.location.reload(true)
+      
+    }
     navigate('/');
   }
 

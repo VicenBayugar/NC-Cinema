@@ -40,9 +40,14 @@ export const Login = () => {
       .then(res => {
         const tokenRecibido = res.data.token;
         const idRecibido = res.data.user._id;
+        const name = res.data.user.name;
+        const role = res.data.user.role;
         sessionStorage.setItem('token', tokenRecibido);
         sessionStorage.setItem('id',idRecibido);
-
+        // sessionStorage.setItem('role',role);
+        // sessionStorage.setItem('name',name);
+        // console.log(name)
+        // console.log(role)
         navigate(-1);
       })
       .catch(error => {

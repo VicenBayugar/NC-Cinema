@@ -3,16 +3,31 @@ import { Navbar, Container, Nav, NavDropdown,Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogoNC from '/img/logo_NCinema.png';
 import { Link, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
-let token = sessionStorage.getItem('token')
+let token = sessionStorage.getItem('token');
+let name = sessionStorage.getItem('data');
+let role = sessionStorage.getItem('role');
 
 
 const Header = () => {
-  const user = {
-    "name": "eze",
-    "role": "admin"
-  }
+
+  const [data, setData] = useState();
+  const idUser = sessionStorage.getItem('id');
+
+  useEffect(() => {
+    const obtenerUser = async () => {
+      const data = await fetch(`http://localhost:3005/api/users/${idUser}`);
+      const userObtenidas = await data.json();
+      setData(userObtenidas);
+    };
+    obtenerUser();
+  }, []);
+
+  console.log(data);
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -41,10 +56,10 @@ const Header = () => {
                 Todas las categorías
               </NavDropdown.Item>
             </NavDropdown>
-            {user.name ? 
+            {data ? 
             <Dropdown>
               <Dropdown.Toggle className='btn btn-dark btn-outline-secondary'  id="dropdown-basic">
-                {user.name}
+                {data.user.name}
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -54,7 +69,7 @@ const Header = () => {
                   <span>Profile</span>
                 </Link>
                 {
-                  user.role === "admin" &&
+                  data.user.role[0] === 'admin"' &&
                   
                     <Link to="/dashboard/" className="dropdown-item">
                       <span>Dashboard</span>
