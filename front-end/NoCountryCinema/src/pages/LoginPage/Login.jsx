@@ -43,6 +43,7 @@ export const Login = () => {
         const roleRecibido = res.data.user.role;
         sessionStorage.setItem('token', tokenRecibido);
         sessionStorage.setItem('id',idRecibido);
+        sessionStorage.setItem('role', roleRecibido);
         window.location.reload(true)
         // navigate(-1);
       })
@@ -51,6 +52,7 @@ export const Login = () => {
       });
       
   };
+  
   let token = sessionStorage.getItem('token');
 
   return (
