@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { Button, Container, Row, Table, Col, Card } from 'react-bootstrap';
-import axios from 'axios';
+
 
 const Profile = () => {
   const navigate = useNavigate();
+
+  
   function handlerClick(e) {
     e.preventDefault();
     sessionStorage.clear();
@@ -13,6 +15,9 @@ const Profile = () => {
 
   const [data, setData] = useState();
   const idUser = sessionStorage.getItem('id');
+  
+  
+  
 
   useEffect(() => {
     const obtenerUser = async () => {
@@ -22,17 +27,18 @@ const Profile = () => {
     };
     obtenerUser();
   }, []);
-
-  console.log(data);
-
+  
+  
   let token = sessionStorage.getItem('token');
+
   return (
     <>
       {!token && <Navigate to={'/login'} />}
       {data && (
         <Container>
           <Container className="text-end">
-            <Button
+          
+          <Button
               style={{
                 color: 'whitesmoke',
               }}

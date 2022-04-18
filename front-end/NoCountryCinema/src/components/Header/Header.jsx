@@ -5,9 +5,6 @@ import LogoNC from '/img/logo_NCinema.png';
 import { Link, Navigate } from 'react-router-dom';
 
 
-let token = sessionStorage.getItem('token')
-
-
 const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">

@@ -4,8 +4,7 @@ import './footer.css';
 
 const Footer = () => {
   return (
-    <footer className="">
-      <Container>
+    <footer className="container-fluid">
         <hr />
         <Row
           className="centrarFooter "
@@ -65,7 +64,7 @@ const Footer = () => {
         <Row className="centrarFooter">
           <p className="g17">&copy;NoCountry G-17 (2022)</p>
         </Row>
-      </Container>
+      
     </footer>
   );
 };

@@ -2,17 +2,13 @@ footer {
   /* margin-top: 12px; */
   left: 0px;
   bottom: 0px;
+  margin-top: 1rem;
   background-color: rgb(25, 25, 25);
   width: 100%;
-  align-self: stretch;
-  justify-content: space-around;
+  justify-content: space-between;
   color: white;
 }
 
-/*fuente footer*/
-p {
-  /* font-size: 24px; */
-}
 
 iframe {
   border: rgb(0, 218, 207) 2px solid;
