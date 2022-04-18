@@ -8,6 +8,7 @@ import Butaca from './Butacas';
 
 const Description = ({ movie }) => {
   const butacas = movie.butacas;
+  
   return (
     <>
       {movie && (
@@ -102,6 +103,7 @@ const Description = ({ movie }) => {
                 <div className="butaca-container">
                   <div className="butaca-fila">
                     {butacas.map(butaca => (
+                      
                       <Butaca
                         key={butaca._id}
                         number={butaca.number}

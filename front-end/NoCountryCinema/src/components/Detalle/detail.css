@@ -67,11 +67,11 @@ td {
   height: 1.35rem;
   margin: 0.25rem;
   padding: 0.25rem;
-  background-color: red;
+  background-color: aqua;
   border-radius: 50%;
 }
 .false{
-  background-color: yellow;
+  background-color: red
 }
 .true{
   background: green;

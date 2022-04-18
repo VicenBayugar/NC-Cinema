@@ -1,12 +1,13 @@
 import React from 'react';
 import './detail.css';
 
-const Butaca = props => {
+const Butaca = ({ number, className }) => {
+  // console.log(props)
   return (
     <>
       <div className="butaca-fila">
-        <div className={`butaca-asiento ${props.state} `}>
-          <p className="butaca-numero">{props.number}</p>
+        <div className={`butaca-asiento ${className} `}>
+          <p className="butaca-numero">{number}</p>
         </div>
       </div>
     </>
