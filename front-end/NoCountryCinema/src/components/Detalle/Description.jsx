@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import axios from 'axios';
 import './detail.css';
@@ -8,9 +8,29 @@ import Butaca from './Butacas';
 
 const Description = ({ movie }) => {
   const butacas = movie.butacas;
+  const [butacaElegida, setBucataElegida] = useState({});
+  const [butacasDisponibles, setButacasDisponibles] = useState([]);
 
-  console.log(movie);
-  
+  const handlerButaca = butaca => {
+    const butaquita = butacasDisponibles.find(butac => butac == butaca);
+    if (butaquita) {
+      if (butaquita == butacaElegida) {
+        butacaElegida.state = false;
+        setBucataElegida({});
+      } else {
+        butacaElegida.state = false;
+        butaquita.state = true;
+        setBucataElegida(butaquita);
+      }
+    } else {
+      null;
+    }
+  };
+
+  useEffect(() => {
+    console.log(butacaElegida);
+  }, [butacaElegida]);
+
   return (
     <>
       {movie && (
@@ -107,13 +127,15 @@ const Description = ({ movie }) => {
                     <div className="butaca-container">
                       <div className="butaca-fila">
                         {butacas.map(butaca => (
-                          
                           <Butaca
                             key={butaca._id}
                             number={butaca.number}
                             className={`${butaca.state} `}
+                            handlerButaca={handlerButaca}
+                            butaca={butaca}
+                            setButacasDisponibles={setButacasDisponibles}
+                            butacas={butacas}
                           />
-                          
                         ))}
                       </div>
                     </div>
@@ -121,41 +143,38 @@ const Description = ({ movie }) => {
                 </Col>
                 <Col xl={6} className="px-0">
                   <Row>
-                    <h3 className='mt-5 col-12'>horarios</h3>
+                    <h3 className="mt-5 col-12">Horarios</h3>
                   </Row>
                   <Row>
-                    <Col className='col-2 text-center mt-3'>
-                      <h3 className='border rounded-2'>2D</h3>
-                      <h4>doblada</h4>
+                    <Col className="col-2 text-center mt-5">
+                      <h3 className="border rounded-2">2D</h3>
                     </Col>
                     <Row>
-                    <button className='border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white'>
-                        9:00pm
+                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
+                        10:00pm
                       </button>
-                      <button className='border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white'>
-                        9:00pm
+                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
+                        13:00pm
+                      </button>
+                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
+                        20:00pm
                       </button>
                     </Row>
                   </Row>
                   <Row>
-                    <Col className='col-2 text-center mt-3'>
-                      <h3 className=' border rounded-3 '>
-                        3D
-                      </h3>
-                      <h4>
-                        subtitulada
-                      </h4>
+                    <Col className="col-2 text-center mt-5">
+                      <h3 className=" border rounded-3 ">3D</h3>
                     </Col>
                     <Row>
-                      <button className='border border-info rounded-3 col-3 m-2 p-2 bg-info text-dark'>
-                        9:00pm
+                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
+                        16:00pm
                       </button>
-                      <button className='border border-info rounded-3 col-3 m-2 p-2 bg-info text-dark'>
-                        9:00pm
+                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
+                        19:00pm
                       </button>
-                      <button className='border border-info rounded-3 col-3 m-2 p-2 bg-info text-dark'>
-                        9:00pm
-                      </button>  
+                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
+                        23:00pm
+                      </button>
                     </Row>
                   </Row>
                 </Col>
