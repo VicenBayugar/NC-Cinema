@@ -6,7 +6,7 @@ const salaSchema = new Schema({
         name:{
             type:String
         },
-        butacas: [{ 
+        movie: [{ 
             number: Number,
             state: Boolean,
             reservation:{type: Date, required: true, default: Date.now } 

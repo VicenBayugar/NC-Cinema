@@ -1,11 +1,36 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, NavLink } from 'react-bootstrap';
+import './header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogoNC from '/img/logo_NCinema.png';
 import { Link, Navigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 const Header = () => {
+
+  const [data, setData] = useState();
+  const idUser = sessionStorage.getItem('id');
+
+  function handlerClick(e) {
+    e.preventDefault();
+    if(idUser){
+      sessionStorage.clear();
+      window.location.reload(true)
+    }
+    navigate('/');
+  }
+
+  useEffect(() => {
+    const obtenerUser = async () => {
+      const data = await fetch(`http://localhost:3005/api/users/${idUser}`);
+      const userObtenidas = await data.json();
+      setData(userObtenidas);
+    };
+    obtenerUser();
+  }, []);
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -34,9 +59,36 @@ const Header = () => {
                 Todas las categorías
               </NavDropdown.Item>
             </NavDropdown>
-            <Link to={"/login"}>
-              <i className="bi bi-person-circle text-light"></i>
-            </Link>
+
+            {
+              data ?
+                <NavDropdown title={data.user.name}>
+
+                  <div className="dropdown">
+                    {
+                      data.user.role[0] === 'admin"'
+                        ? <Link to="/dashboard/" className="dropdown-item">
+                          <i className="fa fa-sign-in me-2">Dashboard</i>
+                        </Link>
+                        : <Link to="profile" className="dropdown-item">
+                          <i className="fa fa-sign-in me-2 ">profile</i>
+                        </Link>
+                    }
+                    <hr className="dropdown-divider" />
+
+                    <button className="dropdown-item hover-dark " onClick={handlerClick}>Logout <i className="bi bi-box-arrow-right" /></button>
+
+
+                  </div>
+
+                </NavDropdown>
+                :
+                <Link to={'/login'} >
+                  <i className='but bi bi-box-arrow-in-right'title='Login'></i>
+                </Link>
+
+
+            }
           </Nav>
         </Navbar.Collapse>
       </Container>
