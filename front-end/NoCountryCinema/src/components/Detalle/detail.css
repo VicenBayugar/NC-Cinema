@@ -40,9 +40,10 @@ td {
   margin: 1rem;
 }
 .pantalla-texto {
+  color: black;
   margin-top: 1rem;
   text-align: center;
-  background-color: red;
+  background-color: #02c5bc ;
   width: 75%;
 }
 
@@ -67,14 +68,22 @@ td {
   height: 1.35rem;
   margin: 0.25rem;
   padding: 0.25rem;
-  background-color: aqua;
+  background-color: red;
   border-radius: 50%;
 }
 .false{
-  background-color: red
+  border: 2px solid #02c5bc;
+  background-color:transparent;
+}
+.false:hover{
+  cursor: pointer;
+  background-color: #02c5bc;
+  color: black;
+
 }
 .true{
-  background: green;
+  background: #02c5bc;
+  color:black
 }
 
 /* .false{
