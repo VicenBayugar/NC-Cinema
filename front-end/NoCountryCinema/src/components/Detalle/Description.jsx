@@ -143,37 +143,39 @@ const Description = ({ movie }) => {
                 </Col>
                 <Col xl={6} className="px-0">
                   <Row>
-                    <h3 className="mt-5 col-12">Horarios</h3>
+                    <h3 className="mt-5 col-12 d-flex justify-content-center">
+                      Horarios
+                    </h3>
                   </Row>
-                  <Row>
-                    <Col className="col-2 text-center mt-5">
-                      <h3 className="border rounded-2">2D</h3>
+                  <Row className="d-flex justify-content-center">
+                    <Col className="col-2 text-center mt-5 ">
+                      <h3 className="border rounded-2 ">2D</h3>
                     </Col>
-                    <Row>
+                    <Row className="d-flex justify-content-center mt-3">
                       <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        10:00pm
+                        10:00hs
                       </button>
                       <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        13:00pm
+                        13:00hs
                       </button>
                       <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        20:00pm
+                        20:00hs
                       </button>
                     </Row>
                   </Row>
-                  <Row>
-                    <Col className="col-2 text-center mt-5">
+                  <Row className="d-flex justify-content-center">
+                    <Col className="col-2 text-center mt-5 ">
                       <h3 className=" border rounded-3 ">3D</h3>
                     </Col>
-                    <Row>
+                    <Row className="d-flex justify-content-center mt-3">
                       <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        16:00pm
+                        16:00hs
                       </button>
                       <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        19:00pm
+                        19:00hs
                       </button>
                       <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        23:00pm
+                        23:00hs
                       </button>
                     </Row>
                   </Row>
@@ -181,7 +183,7 @@ const Description = ({ movie }) => {
               </Row>
             </div>
           </div>
-          <Container className="text-center mb-2">
+          <Container className="text-center mb-2 mt-5">
             <Button
             // onClick={handlerClick}
             >

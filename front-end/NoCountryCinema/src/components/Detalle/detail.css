@@ -29,7 +29,7 @@ td {
 .sala-container{
   
   display: block;
-  width: 90%;
+  width: 350px;
   margin: 2rem auto;
 }
 
@@ -116,7 +116,7 @@ td {
 @media (min-width: 371px) {
   .sala-container{
     display: block;
-    width: 400px;
+    width: 370px;
     margin: 2rem auto;
   }
   .butaca-asiento {
