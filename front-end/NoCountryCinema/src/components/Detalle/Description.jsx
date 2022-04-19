@@ -8,6 +8,8 @@ import Butaca from './Butacas';
 
 const Description = ({ movie }) => {
   const butacas = movie.butacas;
+
+  console.log(movie);
   
   return (
     <>
@@ -94,29 +96,72 @@ const Description = ({ movie }) => {
               </Row>
             </Col>
           </Row>
-          <Row>
-            <Col xl={6} className="px-0">
-              <div className="sala-container">
-                <div className="pantalla-container">
-                  <p className="pantalla-texto">PANTALLA</p>
-                </div>
-                <div className="butaca-container">
-                  <div className="butaca-fila">
-                    {butacas.map(butaca => (
-                      
-                      <Butaca
-                        key={butaca._id}
-                        number={butaca.number}
-                        className={`${butaca.state} `}
-                      />
-                      
-                    ))}
+          <div className="container">
+            <div className="row">
+              <Row>
+                <Col xl={6} className="px-0">
+                  <div className="sala-container">
+                    <div className="pantalla-container">
+                      <p className="pantalla-texto">PANTALLA</p>
+                    </div>
+                    <div className="butaca-container">
+                      <div className="butaca-fila">
+                        {butacas.map(butaca => (
+                          
+                          <Butaca
+                            key={butaca._id}
+                            number={butaca.number}
+                            className={`${butaca.state} `}
+                          />
+                          
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Col>
-            <Col xl={6} className="px-0"></Col>
-          </Row>
+                </Col>
+                <Col xl={6} className="px-0">
+                  <Row>
+                    <h3 className='mt-5 col-12'>horarios</h3>
+                  </Row>
+                  <Row>
+                    <Col className='col-2 text-center mt-3'>
+                      <h3 className='border rounded-2'>2D</h3>
+                      <h4>doblada</h4>
+                    </Col>
+                    <Row>
+                    <button className='border border-info rounded-3 col-3 m-3 p-2 bg-dark text-white'>
+                        9:00pm
+                      </button>
+                      <button className='border border-info rounded-3 col-3 m-3 p-2 bg-dark text-white'>
+                        9:00pm
+                      </button>
+                    </Row>
+                  </Row>
+                  <Row>
+                    <Col className='col-2 text-center m-3'>
+                      <h3 className=' border rounded-3 '>
+                        3D
+                      </h3>
+                      <h4>
+                        subtitulada
+                      </h4>
+                    </Col>
+                    <Row>
+                      <button className='border border-info rounded-3 col-3 m-3 p-2 bg-info text-dark'>
+                        9:00pm
+                      </button>
+                      <button className='border border-info rounded-3 col-3 m-3 p-2 bg-info text-dark'>
+                        9:00pm
+                      </button>
+                      <button className='border border-info rounded-3 col-3 m-3 p-2 bg-info text-dark'>
+                        9:00pm
+                      </button>  
+                    </Row>
+                  </Row>
+                </Col>
+              </Row>
+            </div>
+          </div>
           <Container className="text-center mb-2">
             <Button
             // onClick={handlerClick}
