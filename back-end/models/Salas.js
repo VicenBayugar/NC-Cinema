@@ -1,17 +1,27 @@
 const mongoose = require('mongoose');
-const  Schema  = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 const salaSchema = new Schema({
-       
-        name:{
-            type:String
-        },
-        movie: [{ 
-            number: Number,
-            state: Boolean,
-            reservation:{type: Date, required: true, default: Date.now } 
-        }]
+
+    name: {
+        type: String
     },
+
+    dia: String,
+
+  
+            
+        movies: [{
+
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'movies',
+        horarios:{
+            type:Number
+        },
+    }]
+
+
+},
     {
         timestamps: true, //TODO: crea automaticamente, los campos createdAT, updateAt
         versionKey: false

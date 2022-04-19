@@ -1,6 +1,6 @@
-const monogoose = require("mongoose")
+const mongoose = require("mongoose")
 
-const movieSchema = new monogoose.Schema(
+const movieSchema = new mongoose.Schema(
     {
        
         title:{
@@ -52,7 +52,11 @@ const movieSchema = new monogoose.Schema(
             number: Number,
             state: Boolean,
             reservation:{type: Date, required: true, default: Date.now } 
-        }]
+        }],
+        sala:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref: 'Salas'
+        },
 
         
     },
@@ -61,4 +65,4 @@ const movieSchema = new monogoose.Schema(
         versionKey: false
     }
 );
-module.exports = monogoose.model("movies", movieSchema)
+module.exports = mongoose.model("movies", movieSchema)
