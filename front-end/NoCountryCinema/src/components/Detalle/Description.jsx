@@ -48,9 +48,7 @@ const Description = ({ movie }) => {
     } catch (e) {}
   };
 
-  useEffect(() => {
-    console.log(butacaElegida.number);
-  }, [butacaElegida]);
+  useEffect(() => {}, [butacaElegida]);
 
   return (
     <>
