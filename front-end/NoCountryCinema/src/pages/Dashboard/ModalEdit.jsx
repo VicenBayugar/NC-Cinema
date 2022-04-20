@@ -2,29 +2,30 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'react-bootstrap'
 
-const ModalEdit = ({ modal, setModal, movie_id }) => {
-    //const [movie, setmovie] = useState();
+const ModalEdit = ({ modal, setModal}) => {
+    
 
-    /*useEffect(async () => {
-        const enpoint = (`http://localhost:3005/api/movies/${movie_id}`)
-        await axios.get(enpoint, movie)
-        .then((res) => {
-            const apidata = res.data;
-            setmovie(apidata);  
-        })  
-        .catch((error) => {
-            console.log(error);
-            sweetAlert({ title: 'ops', icon: 'error' });
-        });
-    }, [])*/ 
-
-
+    
+    //  const handleEdit = async (id) => {
+    //      const endPoint = `http://localhost:3005/api/movies/${id}`
+    //       await axios.put(endPoint)
+    //       .then((res) => {
+    //             console.log(res);
+    //       })  
+    //       .catch((error) => {
+    //          console.log(error);
+    //          sweetAlert({ title: 'ops', icon: 'error' });
+    //       });
+    //  }
+     
 
     return (
+        
         <Modal show={modal}>
             <ModalHeader style={{ display: 'block' }}>
                 <h4>Editar Pelicula</h4>
             </ModalHeader>
+            
             <ModalBody>
                 <div className="form-group">
                     <label htmlFor="nombre">Nombre</label>
@@ -52,7 +53,7 @@ const ModalEdit = ({ modal, setModal, movie_id }) => {
                 </div>
             </ModalBody>
             <ModalFooter>
-                <Button>Guardar cambios</Button>
+                <Button >Guardar cambios</Button>
                 <Button onClick={() => setModal(false)}> Cancelar</Button>
             </ModalFooter>
         </Modal>
