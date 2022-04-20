@@ -3,16 +3,20 @@ import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import axios from 'axios';
 import './detail.css';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Butaca from './Butacas';
 import sweetAlert from 'sweetalert';
 
 const Description = ({ movie }) => {
   const navigate = useNavigate();
   const title = movie.title;
+  const day = movie.day;
+  const schedule = movie.schedule;
   const butacas = movie.butacas;
   const [butacaElegida, setBucataElegida] = useState({});
   const [butacasDisponibles, setButacasDisponibles] = useState([]);
+
+  const idUser = sessionStorage.getItem('id') || null;
 
   const handlerButaca = butaca => {
     const butaquita = butacasDisponibles.find(butac => butac == butaca);
@@ -32,20 +36,26 @@ const Description = ({ movie }) => {
   const handleSubmit = async e => {
     e.preventDefault();
 
-    try {
-      await axios.put(
-        `http://localhost:3005/api/movies/${title}/butacas`,
-        {
-          number: butacaElegida.number,
-        },
-        sessionStorage.setItem('butaca', butacaElegida.number),
-        sessionStorage.setItem('pelicula', title),
-        sweetAlert({ title: '¡Butaca comprada con éxito!', icon: 'success' }),
-        setTimeout(() => {
-          navigate('/profile');
-        }, 2000),
-      );
-    } catch (e) {}
+    if (butacaElegida.state != false && butacaElegida.state != true) {
+      sweetAlert({ title: 'Debes seleccionar una butaca', icon: 'error' });
+    } else {
+      try {
+        await axios.put(
+          `http://localhost:3005/api/movies/${title}/butacas`,
+          {
+            number: butacaElegida.number,
+          },
+          sessionStorage.setItem('butaca', butacaElegida.number),
+          sessionStorage.setItem('pelicula', title),
+          sessionStorage.setItem('day', day),
+          sessionStorage.setItem('schedule', schedule),
+          sweetAlert({ title: '¡Butaca comprada con éxito!', icon: 'success' }),
+          setTimeout(() => {
+            navigate('/profile');
+          }, 2000),
+        );
+      } catch (e) {}
+    }
   };
 
   useEffect(() => {}, [butacaElegida]);
@@ -122,82 +132,64 @@ const Description = ({ movie }) => {
                       <td id="disponible">2D</td>
                       <td></td>
                     </tr>
+                    <tr>
+                      <td>Día: </td>
+                      <td id="disponible">{day}</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Horario: </td>
+                      <td id="disponible">{schedule} hs</td>
+                      <td></td>
+                    </tr>
                   </tbody>
                 </Table>
               </Row>
             </Col>
           </Row>
-          <div className="container">
-            <div className="row">
-              <Row>
-                <Col xl={6} className="px-0">
-                  <div className="sala-container">
-                    <div className="pantalla-container">
-                      <p className="pantalla-texto">PANTALLA</p>
-                    </div>
-                    <div className="butaca-container">
-                      <div className="butaca-fila">
-                        {butacas.map(butaca => (
-                          <Butaca
-                            key={butaca._id}
-                            number={butaca.number}
-                            className={`${butaca.state} `}
-                            handlerButaca={handlerButaca}
-                            butaca={butaca}
-                            setButacasDisponibles={setButacasDisponibles}
-                            butacas={butacas}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col xl={6} className="px-0">
+
+          {idUser ? (
+            <>
+              <div className="container">
+                <div className="row">
                   <Row>
-                    <h3 className="mt-5 col-12 d-flex justify-content-center">
-                      Horarios
-                    </h3>
-                  </Row>
-                  <Row className="d-flex justify-content-center">
-                    <Col className="col-2 text-center mt-5 ">
-                      <h3 className="border rounded-2 ">2D</h3>
+                    <Col xl={12} className="px-0">
+                      <div className="sala-container">
+                        <div className="pantalla-container">
+                          <p className="pantalla-texto">PANTALLA</p>
+                        </div>
+                        <div className="butaca-container">
+                          <div className="butaca-fila">
+                            {butacas.map(butaca => (
+                              <Butaca
+                                key={butaca._id}
+                                number={butaca.number}
+                                className={`${butaca.state} `}
+                                handlerButaca={handlerButaca}
+                                butaca={butaca}
+                                setButacasDisponibles={setButacasDisponibles}
+                                butacas={butacas}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </Col>
-                    <Row className="d-flex justify-content-center mt-3">
-                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        10:00hs
-                      </button>
-                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        13:00hs
-                      </button>
-                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        20:00hs
-                      </button>
-                    </Row>
                   </Row>
-                  <Row className="d-flex justify-content-center">
-                    <Col className="col-2 text-center mt-5 ">
-                      <h3 className=" border rounded-3 ">3D</h3>
-                    </Col>
-                    <Row className="d-flex justify-content-center mt-3">
-                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        16:00hs
-                      </button>
-                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        19:00hs
-                      </button>
-                      <button className="border border-info rounded-3 col-3 m-2 p-2 bg-dark text-white">
-                        23:00hs
-                      </button>
-                    </Row>
-                  </Row>
-                </Col>
-              </Row>
-            </div>
-          </div>
-          <Container className="text-center mb-2 mt-5">
-            <Button onClick={handleSubmit}>Comprar</Button>
-            <Container></Container>
-          </Container>
+                </div>
+              </div>
+              <Container className="text-center mb-2 mt-5">
+                <Button onClick={handleSubmit}>Comprar</Button>
+              </Container>
+            </>
+          ) : (
+            <h3 className="text-center mt-5 mb-5 ">
+              Para comprar la entrada debes{' '}
+              <Link to="/profile" className="text-decoration-none link-sesion">
+                iniciar sesión
+              </Link>
+            </h3>
+          )}
         </Container>
       )}
     </>
