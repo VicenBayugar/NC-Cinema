@@ -21,6 +21,8 @@ const Profile = () => {
   let role = sessionStorage.getItem('role');
   let pelicula = sessionStorage.getItem('pelicula') || 'No compraste nada gil';
   let butaca = sessionStorage.getItem('butaca') || ' 0';
+  let day = sessionStorage.getItem('day');
+  let schedule = sessionStorage.getItem('schedule');
 
   return (
     <>
@@ -84,11 +86,12 @@ const Profile = () => {
                   <Card.Body>
                     <Card.Title className="mb-4">{pelicula}</Card.Title>
                     <Card.Text>
-                      <i className="bi bi-calendar3 fs-5 pe-1"></i>Hoy, 11 de
-                      Abril, 2022
+                      <i className="bi bi-calendar3 fs-5 pe-1"></i>
+                      {day}
                     </Card.Text>
                     <Card.Text>
-                      <i className="bi bi-stopwatch fs-5 pe-1"></i>6:00 pm
+                      <i className="bi bi-stopwatch fs-5 pe-1"></i>
+                      {schedule}
                     </Card.Text>
                     <Card.Text>
                       <i className="bi bi-geo-alt fs-5 pe-1"></i>Butaca:
