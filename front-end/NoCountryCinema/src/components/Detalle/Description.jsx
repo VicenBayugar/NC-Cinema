@@ -5,18 +5,15 @@ import './detail.css';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Butaca from './Butacas';
-import { Navigate } from 'react-router-dom';
-
+import sweetAlert from 'sweetalert';
 
 const Description = ({ movie }) => {
-  const navigate = useNavigate()
-  const title =  movie.title;
+  const navigate = useNavigate();
+  const title = movie.title;
   const butacas = movie.butacas;
   const [butacaElegida, setBucataElegida] = useState({});
   const [butacasDisponibles, setButacasDisponibles] = useState([]);
- 
- console.log(title);
-  
+
   const handlerButaca = butaca => {
     const butaquita = butacasDisponibles.find(butac => butac == butaca);
     if (butaquita) {
@@ -34,15 +31,21 @@ const Description = ({ movie }) => {
   };
   const handleSubmit = async e => {
     e.preventDefault();
-  
-   
+
     try {
-      await axios.put(`http://localhost:3005/api/movies/${title}/butacas`, {
-        number: butacaElegida.number
-      },
-      navigate("/profile"))
-    } catch (e) {
-    }  
+      await axios.put(
+        `http://localhost:3005/api/movies/${title}/butacas`,
+        {
+          number: butacaElegida.number,
+        },
+        sessionStorage.setItem('butaca', butacaElegida.number),
+        sessionStorage.setItem('pelicula', title),
+        sweetAlert({ title: '¡Butaca comprada con éxito!', icon: 'success' }),
+        setTimeout(() => {
+          navigate('/profile');
+        }, 2000),
+      );
+    } catch (e) {}
   };
 
   useEffect(() => {
@@ -114,10 +117,7 @@ const Description = ({ movie }) => {
                           );
                         })}
                       </td>
-                      <td>
-
-                      </td>
-                      
+                      <td></td>
                     </tr>
                     <tr>
                       <td>Disponible: </td>
@@ -197,11 +197,7 @@ const Description = ({ movie }) => {
             </div>
           </div>
           <Container className="text-center mb-2 mt-5">
-            <Button
-            onClick={handleSubmit}
-            >
-              Comprar
-            </Button>
+            <Button onClick={handleSubmit}>Comprar</Button>
             <Container></Container>
           </Container>
         </Container>

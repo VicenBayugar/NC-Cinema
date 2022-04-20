@@ -2,12 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { Button, Container, Row, Table, Col, Card } from 'react-bootstrap';
 
-
 const Profile = () => {
   const navigate = useNavigate();
-
-
-
 
   const [data, setData] = useState();
 
@@ -22,17 +18,18 @@ const Profile = () => {
 
   let idUser = sessionStorage.getItem('id');
   let token = sessionStorage.getItem('token');
-  let role = sessionStorage.getItem('role')
+  let role = sessionStorage.getItem('role');
+  let pelicula = sessionStorage.getItem('pelicula') || 'No compraste nada gil';
+  let butaca = sessionStorage.getItem('butaca') || ' 0';
 
   return (
     <>
       {!token && <Navigate to={'/login'} />}
-      {token && role === 'admin"' && <Navigate to={'/dashboard'}/>}
+      {token && role === 'admin"' && <Navigate to={'/dashboard'} />}
       {data && (
-
         <Container>
           <Row className="row-tittle text-center">
-            <h2 className="mt-1">Perfil</h2>
+            <h2 className="mt-5">Perfil</h2>
           </Row>
           <Row className="mt-5 mb-5">
             <Col xl={6}>
@@ -83,9 +80,9 @@ const Profile = () => {
               <Row className="ps-5 pe-5">
                 <h2 className="mb-5 text-center">Mis películas:</h2>
                 <Card className="text-center bg-dark">
-                  <Card.Header>Sala 2</Card.Header>
+                  <Card.Header>Sala</Card.Header>
                   <Card.Body>
-                    <Card.Title className="mb-4">Batman</Card.Title>
+                    <Card.Title className="mb-4">{pelicula}</Card.Title>
                     <Card.Text>
                       <i className="bi bi-calendar3 fs-5 pe-1"></i>Hoy, 11 de
                       Abril, 2022
@@ -94,10 +91,10 @@ const Profile = () => {
                       <i className="bi bi-stopwatch fs-5 pe-1"></i>6:00 pm
                     </Card.Text>
                     <Card.Text>
-                      <i className="bi bi-geo-alt fs-5 pe-1"></i>Ubicaciones:
-                      P-6, P-7
+                      <i className="bi bi-geo-alt fs-5 pe-1"></i>Butaca:
+                      {` ${butaca}`}
                     </Card.Text>
-                    <Button variant="primary">Cambiar ubicación</Button>
+                    <Button variant="primary">Seguir comprando</Button>
                   </Card.Body>
                   <Card.Footer className="text-muted">2D - DOBLADA</Card.Footer>
                 </Card>
