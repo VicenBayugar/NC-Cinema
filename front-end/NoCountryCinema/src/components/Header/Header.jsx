@@ -22,6 +22,9 @@ const Header = () => {
           <Nav className="ms-auto fs-5 d-flex align-items-center justify-content-center">
             <Nav.Link href="#promociones">Promociones</Nav.Link>
             <Nav.Link href="#candy">Candy</Nav.Link>
+
+            <Nav.Link href="#butacas">Butacas</Nav.Link>
+
             <NavDropdown title="Películas" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                 Categoría 1

@@ -9,6 +9,8 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import {Login} from './pages/LoginPage/Login'
 
 
+
+
 function App() {
   return (
     <div className="App">
@@ -20,6 +22,8 @@ function App() {
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/detalle/:title' element={<MovieDetails />} />
           <Route path='/profile' element={<Profile/>}/>
+     
+
         </Routes>
         <Footer />
       </Router>

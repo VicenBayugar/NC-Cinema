@@ -13,7 +13,7 @@ const Profile = () => {
 
   const [data, setData] = useState();
   const idUser = sessionStorage.getItem('id');
-
+const butacas =sessionStorage.getItem('butacas');
   useEffect(() => {
     const obtenerUser = async () => {
       const data = await fetch(`http://localhost:3005/api/users/${idUser}`);
@@ -22,6 +22,14 @@ const Profile = () => {
     };
     obtenerUser();
   }, []);
+  useEffect(() => {
+    const obtenerButaca = async () => {
+      const data = await fetch(`http://localhost:3005/api/movies/${butacas}`);
+      const butacasObtenidas = await data.json();
+      setData(butacasObtenidas);
+    };
+    obtenerButaca();
+  },  []);
 
   console.log(data);
 
@@ -95,6 +103,9 @@ const Profile = () => {
                 <h2 className="mb-5 text-center">Mis películas:</h2>
                 <Card className="text-center bg-dark">
                   <Card.Header>Sala 2</Card.Header>
+             
+
+                  <Card.Header>N° de butacas</Card.Header>
                   <Card.Body>
                     <Card.Title className="mb-4">Batman</Card.Title>
                     <Card.Text>
