@@ -4,7 +4,7 @@ const salasController = {
     //Trae las butacas de la sala elegida por Id.
     salaGet: async (req, res) => {
         try {
-            const sala = await Sala.findById("6252da12946fb604c307d988");
+            const sala = await Sala.find().populate('movies');
             res.status(200).json({ sala });
             console.log(sala);
         } catch (error) {
