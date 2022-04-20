@@ -5,8 +5,11 @@ import './detail.css';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Butaca from './Butacas';
+import sweetAlert from 'sweetalert';
 
 const Description = ({ movie }) => {
+  const navigate = useNavigate();
+  const title = movie.title;
   const butacas = movie.butacas;
   const [butacaElegida, setBucataElegida] = useState({});
   const [butacasDisponibles, setButacasDisponibles] = useState([]);
@@ -26,9 +29,27 @@ const Description = ({ movie }) => {
       null;
     }
   };
+  const handleSubmit = async e => {
+    e.preventDefault();
+
+    try {
+      await axios.put(
+        `http://localhost:3005/api/movies/${title}/butacas`,
+        {
+          number: butacaElegida.number,
+        },
+        sessionStorage.setItem('butaca', butacaElegida.number),
+        sessionStorage.setItem('pelicula', title),
+        sweetAlert({ title: '¡Butaca comprada con éxito!', icon: 'success' }),
+        setTimeout(() => {
+          navigate('/profile');
+        }, 2000),
+      );
+    } catch (e) {}
+  };
 
   useEffect(() => {
-    console.log(butacaElegida);
+    console.log(butacaElegida.number);
   }, [butacaElegida]);
 
   return (
@@ -96,20 +117,12 @@ const Description = ({ movie }) => {
                           );
                         })}
                       </td>
-                      <td className="col-5">
-                        {movie.tags.map((mov, idx) => {
-                          return (
-                            <p id="p" key={idx}>
-                              {mov}
-                            </p>
-                          );
-                        })}
-                      </td>
+                      <td></td>
                     </tr>
                     <tr>
                       <td>Disponible: </td>
                       <td id="disponible">2D</td>
-                      <td id="disponible">3D</td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </Table>
@@ -184,11 +197,7 @@ const Description = ({ movie }) => {
             </div>
           </div>
           <Container className="text-center mb-2 mt-5">
-            <Button
-            // onClick={handlerClick}
-            >
-              Comprar
-            </Button>
+            <Button onClick={handleSubmit}>Comprar</Button>
             <Container></Container>
           </Container>
         </Container>

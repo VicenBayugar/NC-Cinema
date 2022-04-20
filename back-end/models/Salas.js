@@ -11,13 +11,12 @@ const salaSchema = new Schema({
 
   
             
-        movies: [{
+        movies:  
+            [{
 
         type: mongoose.Schema.Types.ObjectId,
         ref: 'movies',
-        horarios:{
-            type:Number
-        },
+        
     }]
 
 
