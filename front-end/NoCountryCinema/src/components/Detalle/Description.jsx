@@ -5,12 +5,18 @@ import './detail.css';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Butaca from './Butacas';
+import { Navigate } from 'react-router-dom';
+
 
 const Description = ({ movie }) => {
+  const navigate = useNavigate()
+  const title =  movie.title;
   const butacas = movie.butacas;
   const [butacaElegida, setBucataElegida] = useState({});
   const [butacasDisponibles, setButacasDisponibles] = useState([]);
-
+ 
+ console.log(title);
+  
   const handlerButaca = butaca => {
     const butaquita = butacasDisponibles.find(butac => butac == butaca);
     if (butaquita) {
@@ -26,9 +32,21 @@ const Description = ({ movie }) => {
       null;
     }
   };
+  const handleSubmit = async e => {
+    e.preventDefault();
+  
+   
+    try {
+      await axios.put(`http://localhost:3005/api/movies/${title}/butacas`, {
+        number: butacaElegida.number
+      },
+      navigate("/profile"))
+    } catch (e) {
+    }  
+  };
 
   useEffect(() => {
-    console.log(butacaElegida);
+    console.log(butacaElegida.number);
   }, [butacaElegida]);
 
   return (
@@ -96,20 +114,15 @@ const Description = ({ movie }) => {
                           );
                         })}
                       </td>
-                      <td className="col-5">
-                        {movie.tags.map((mov, idx) => {
-                          return (
-                            <p id="p" key={idx}>
-                              {mov}
-                            </p>
-                          );
-                        })}
+                      <td>
+
                       </td>
+                      
                     </tr>
                     <tr>
                       <td>Disponible: </td>
                       <td id="disponible">2D</td>
-                      <td id="disponible">3D</td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </Table>
@@ -185,7 +198,7 @@ const Description = ({ movie }) => {
           </div>
           <Container className="text-center mb-2 mt-5">
             <Button
-            // onClick={handlerClick}
+            onClick={handleSubmit}
             >
               Comprar
             </Button>
