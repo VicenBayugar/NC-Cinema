@@ -3,11 +3,12 @@ import { Navbar, Container, Nav, NavDropdown, NavLink } from 'react-bootstrap';
 import './header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LogoNC from '/img/logo_NCinema.png';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
 const Header = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState();
   const idUser = sessionStorage.getItem('id') || null;
 
@@ -15,9 +16,9 @@ const Header = () => {
     e.preventDefault();
     if (idUser) {
       sessionStorage.clear();
-      window.location.reload(true);
+      navigate('/');
     }
-    navigate('/');
+    window.location.reload(true);
   }
 
   useEffect(() => {
