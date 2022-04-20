@@ -74,7 +74,7 @@ const controller = {
     },
     updateButacas: async (req, res) => {
         try {
-            const movie = await dbMongo.findById(req.params.id);
+            const movie = await dbMongo.findOne({title:req.params.title});
             //Defino que butacas, es el array de butacas dentro de sala
             const butacas = movie.butacas;           
             // Elijo el asiento por  parametro number
