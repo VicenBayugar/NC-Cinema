@@ -34,17 +34,15 @@ const movieSchema = new mongoose.Schema(
             type:String
         },
         day:{
-            type:Date
+            type:String
         },
         schedule:{
-            type:Date
+            type:String
         },
         premiere:{
             type:Boolean
         }, 
-        tags:{
-            type: [String]
-        },
+        
         language:{
             type: [String]
         },
