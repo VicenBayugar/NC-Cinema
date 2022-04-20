@@ -16,8 +16,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto fs-5 d-flex align-items-center justify-content-center">
-            <Nav.Link href="#promociones">Promociones</Nav.Link>
-            <Nav.Link href="#candy">Candy</Nav.Link>
+           
             <NavDropdown title="Películas" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">
                 Categoría 1
