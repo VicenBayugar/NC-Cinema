@@ -18,7 +18,6 @@ const ListUser = () => {
             .get(endPoint, userList)
             .then((res) => {
                 const userObtenidos = res.data.users;
-                console.log(userObtenidos);
                 setUserList(userObtenidos);
             })
             .catch((error) => {
