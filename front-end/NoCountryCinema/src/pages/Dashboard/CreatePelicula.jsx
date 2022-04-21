@@ -34,7 +34,7 @@ const CreatePelicula = () => {
                 length,
                 image,
                 trailer,
-                premiere: false,
+                premiere: true,
                 language,}}
             )
             sweetAlert({ title: 'Create', icon: 'success' })
