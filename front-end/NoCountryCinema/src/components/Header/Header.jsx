@@ -17,8 +17,8 @@ const Header = () => {
     if (idUser) {
       sessionStorage.clear();
       navigate('/');
+      window.location.reload(true);
     }
-    window.location.reload(true);
   }
 
   useEffect(() => {
@@ -49,11 +49,11 @@ const Header = () => {
               <NavDropdown title={data.user.name}>
                 <div className="dropdown">
                   {data.user.role[0] === 'admin"' ? (
-                    <Link to="/dashboard/" className="dropdown-item">
+                    <Link to="/dashboard" className="dropdown-item">
                       <i className="fa fa-sign-in me-2">Dashboard</i>
                     </Link>
                   ) : (
-                    <Link to="profile" className="dropdown-item">
+                    <Link to="/profile" className="dropdown-item">
                       <i className="fa fa-sign-in me-2 ">Profile</i>
                     </Link>
                   )}
