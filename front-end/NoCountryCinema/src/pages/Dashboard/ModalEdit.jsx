@@ -10,7 +10,7 @@ const ModalEdit = ({ modal, setModal, movie, props }) => {
 
 
     const handleEdit = async (id) => {
-        const endPoint = `http://localhost:3005/api/movies/${id}`
+        const endPoint = `https://nocountry-c4g17-api.herokuapp.com/api/movies/${id}`
         await axios.put(endPoint,{
 
         })

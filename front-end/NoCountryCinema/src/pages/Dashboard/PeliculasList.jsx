@@ -21,7 +21,7 @@ const PeliculasList = () => {
 
     //mostrar peliculas desde la base de datos
     useEffect(async () => {
-        const endPoint = 'http://localhost:3005/api/movies';
+        const endPoint = 'https://nocountry-c4g17-api.herokuapp.com/api/movies';
         await axios
             .get(endPoint, movieList)
             .then((res) => {
@@ -36,7 +36,7 @@ const PeliculasList = () => {
 
     //Funcion para borrar una película
     const handleDelete = async (id) => {
-        const endPoint = `http://localhost:3005/api/movies/${id}`;
+        const endPoint = `https://nocountry-c4g17-api.herokuapp.com/api/movies/${id}`;
         await axios.delete(endPoint)
             .then((res) => {
                 swal({ title: 'Deleted', icon: 'success' })

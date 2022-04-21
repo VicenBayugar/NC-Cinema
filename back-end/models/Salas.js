@@ -22,7 +22,7 @@ const salaSchema = new Schema({
 
 },
     {
-        timestamps: true, //TODO: crea automaticamente, los campos createdAT, updateAt
+        timestamps: true, // TODO: crea automaticamente, los campos createdAT, updateAt
         versionKey: false
     }
 );

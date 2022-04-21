@@ -9,7 +9,7 @@ const HomeDash = () => {
   const [userList, setUserList] = useState([]);
 
   useEffect(() => {
-    const endPoint = 'http://localhost:3005/api/movies';
+    const endPoint = 'https://nocountry-c4g17-api.herokuapp.com/api/movies';
      axios
       .get(endPoint, movieList)
       .then((res) => {
@@ -24,7 +24,7 @@ const HomeDash = () => {
   }, []);
 
   useEffect(() => {
-    const endPoint = 'http://localhost:3005/api/users';
+    const endPoint = 'https://nocountry-c4g17-api.herokuapp.com/api/users';
      axios
         .get(endPoint, userList)
         .then((res) => {
