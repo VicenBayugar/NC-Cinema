@@ -25,3 +25,117 @@ td {
 #disponible {
   text-align: center;
 }
+/* ------- SALA / BUTACA ------- */
+.sala-container{
+  
+  display: block;
+  width: 350px;
+  margin: 2rem auto;
+}
+
+.pantalla-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.pantalla-texto {
+  color: black;
+  margin-top: 1rem;
+  text-align: center;
+  background-color: #02c5bc ;
+  width: 75%;
+}
+
+.butaca-fila {
+  display: flex;
+  /* width: 50%; */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: .3rem;
+}
+.butaca-numero{
+  margin: 0;
+  display: flex;
+  padding-right: 0.1rem;
+}
+.butaca-asiento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: -0.75rem;
+  width: 1.4rem;
+  height: 1.35rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  background-color: red;
+  border-radius: 50%;
+}
+.false{
+  border: 2px solid #02c5bc;
+  background-color:transparent;
+}
+.false:hover{
+  cursor: pointer;
+  background-color: #02c5bc;
+  color: black;
+
+}
+.true{
+  background: #02c5bc;
+  color:black
+}
+
+.link-sesion{
+  color: #02c5bc;
+}
+
+.link-sesion:hover{
+  color:white
+}
+
+/* .false{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: -0.75rem;
+  width: 1.4rem;
+  height: 1.35rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background-color: yellow;
+}
+
+.true{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: -0.75rem;
+  width: 1.4rem;
+  height: 1.35rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background: green;
+} */
+
+
+@media (min-width: 360px) {
+  .sala-container{
+    display: block;
+    width: 350px;
+    margin: 2rem auto;
+  }
+  .butaca-asiento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: -0.75rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0.15rem;
+    padding: 0.15rem;
+    border-radius: 50%;
+  }
+}

@@ -5,8 +5,8 @@ const userValidations = require('../middlewares/userValidations');
 const loginValidations = require('../middlewares/loginValidations')
 
 
-// routes.get("/users", userController.admin); //Info para que el admin sepa cuantos usuarios hay
-// routes.delete("/users/:id", userController.deleteUser); //El admin puede eliminar usuarios
+routes.get("/", userController.admin); //Info para que el admin sepa cuantos usuarios hay
+routes.delete("/:id", userController.deleteUser); //El admin puede eliminar usuarios
 routes.post("/createUser", userValidations, userController.createUser); //crear un usuario
 routes.post("/login", loginValidations, userController.login)
 routes.get("/:id",  userController.detailUser); //detalle del usuario

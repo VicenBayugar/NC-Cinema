@@ -92,7 +92,7 @@ export default function RegisterPage() {
     e.preventDefault();
     setState({ status: 'pending', error: '' });
     try {
-      await axios.post('http://localhost:3005/api/users/createUser', {
+      await axios.post('https://nocountry-c4g17-api.herokuapp.com/api/users/createUser', {
         name: form.name,
         last_name: form.lastname,
         email: form.email,
