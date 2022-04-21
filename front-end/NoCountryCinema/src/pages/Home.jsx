@@ -10,6 +10,7 @@ const Home = () => {
             <Carro />
             <MoviesMain/>
             <MoviesContainer title='PRÓXIMOS ESTRENOS' />
+          
         </>
     )
 }

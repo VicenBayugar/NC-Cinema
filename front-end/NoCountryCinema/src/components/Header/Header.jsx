@@ -32,7 +32,7 @@ const Header = () => {
       };
       obtenerUser();
     }
-  }, [idUser, data]);
+  }, [idUser]);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -45,6 +45,31 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto fs-5 d-flex align-items-center justify-content-center">
+<<<<<<< HEAD
+            <Nav.Link href="#promociones">Promociones</Nav.Link>
+            <Nav.Link href="#candy">Candy</Nav.Link>
+
+            <Nav.Link href="#butacas">Butacas</Nav.Link>
+
+            <NavDropdown title="Películas" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">
+                Categoría 1
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Categoría 2
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                Categoría 3
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Todas las categorías
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Link to={"/login"}>
+              <i className="bi bi-person-circle text-light"></i>
+            </Link>
+=======
             {data ? (
               <NavDropdown title={data.user.name}>
                 <div className="dropdown">
@@ -73,6 +98,7 @@ const Header = () => {
                   title="Login">{` Iniciar sesión`}</i>
               </Link>
             )}
+>>>>>>> d4104d44249be56b15530e1f33cc1d3aa0ed7ee9
           </Nav>
         </Navbar.Collapse>
       </Container>
