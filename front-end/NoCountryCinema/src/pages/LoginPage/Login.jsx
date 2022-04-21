@@ -13,7 +13,8 @@ export const Login = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const endpoint = 'https://nocountry-c4g17-api.herokuapp.com/api/users/login';
+    const endpoint =
+      'https://nocountry-c4g17-api.herokuapp.com/api/users/login';
     const email = e.target.email.value;
     const password = e.target.password.value;
     const filter =
@@ -44,8 +45,8 @@ export const Login = () => {
         sessionStorage.setItem('token', tokenRecibido);
         sessionStorage.setItem('id', idRecibido);
         sessionStorage.setItem('role', roleRecibido);
-        window.location.reload(true);
-        // navigate(-1);
+        // window.location.reload(true);
+        navigate(-1);
       })
       .catch(error => {
         sweetAlert({ title: 'El usuario no existe', icon: 'error' });
