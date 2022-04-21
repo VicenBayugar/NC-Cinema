@@ -24,13 +24,15 @@ const Header = () => {
   useEffect(() => {
     if (idUser) {
       const obtenerUser = async () => {
-        const data = await fetch(`https://nocountry-c4g17-api.herokuapp.com/api/users/${idUser}`);
+        const data = await fetch(
+          `https://nocountry-c4g17-api.herokuapp.com/api/users/${idUser}`,
+        );
         const userObtenidas = await data.json();
         setData(userObtenidas);
       };
       obtenerUser();
     }
-  }, [idUser]);
+  }, [idUser, data]);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -43,24 +45,6 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto fs-5 d-flex align-items-center justify-content-center">
-            <Nav.Link href="#promociones">Promociones</Nav.Link>
-            <Nav.Link href="#candy">Candy</Nav.Link>
-            <NavDropdown title="Películas" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                Categoría 1
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Categoría 2
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Categoría 3
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Todas las categorías
-              </NavDropdown.Item>
-            </NavDropdown>
-
             {data ? (
               <NavDropdown title={data.user.name}>
                 <div className="dropdown">
@@ -70,7 +54,7 @@ const Header = () => {
                     </Link>
                   ) : (
                     <Link to="profile" className="dropdown-item">
-                      <i className="fa fa-sign-in me-2 ">profile</i>
+                      <i className="fa fa-sign-in me-2 ">Profile</i>
                     </Link>
                   )}
                   <hr className="dropdown-divider" />
@@ -83,8 +67,10 @@ const Header = () => {
                 </div>
               </NavDropdown>
             ) : (
-              <Link to={'/login'}>
-                <i className="but bi bi-box-arrow-in-right" title="Login"></i>
+              <Link to={'/login'} className="text-decoration-none">
+                <i
+                  className="but bi bi-box-arrow-in-right"
+                  title="Login">{` Iniciar sesión`}</i>
               </Link>
             )}
           </Nav>
