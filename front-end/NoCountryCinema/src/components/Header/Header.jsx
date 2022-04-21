@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Container, Nav, NavDropdown, NavLink } from 'react-bootstrap';
 import './header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LogoNC from '/img/logo_NCinema.png';
+import LogoNC from '../../../img/logo_NCinema.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';

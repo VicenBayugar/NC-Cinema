@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Button, Container, Row, Table } from 'react-bootstrap'
 import ModalEdit from './ModalEdit';
 import swal from 'sweetalert';
@@ -25,7 +25,6 @@ const PeliculasList = () => {
         await axios
             .get(endPoint, movieList)
             .then((res) => {
-                console.log(res.data.response);
                 const result = res.data.response;
                 setMovieList(result)
             })
@@ -48,9 +47,11 @@ const PeliculasList = () => {
     }
 
     //mostrar modal
-    const handleClick = () => { 
+    const [movieId, setMovieId] = useState()
+
+    const handleClick = (movie) => {
         setModal(true);
-        
+        setMovieId(movie);
     }
 
 
@@ -71,10 +72,10 @@ const PeliculasList = () => {
                         {movieList.map((movie, idx) => {
                             return (
                                 <tr key={idx}>
-                                    <td>{idx}</td>
+                                    <td>{idx + 1}</td>
                                     <td >{movie.title}</td>
                                     <td>
-                                        <Button variant='link' onClick={handleClick}><i className="bi bi-pencil-square text-white"></i></Button>
+                                        <Button variant='link'  onClick={() => { handleClick(movie) }}><i className="bi bi-pencil-square text-white"></i></Button>
                                         <Button variant='link' onClick={() => { handleDelete(movie._id) }}><i className="bi bi-x-square text-white"></i></Button>
                                     </td>
 
@@ -82,7 +83,7 @@ const PeliculasList = () => {
                         })}
                     </tbody>
                 </Table>
-                <ModalEdit modal={modal} setModal={setModal} />
+                <ModalEdit movie={movieId} modal={modal} setModal={setModal} />
 
             </Row>
 
