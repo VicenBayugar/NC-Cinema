@@ -32,7 +32,7 @@ const Header = () => {
       };
       obtenerUser();
     }
-  }, [idUser, data]);
+  }, [idUser]);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
