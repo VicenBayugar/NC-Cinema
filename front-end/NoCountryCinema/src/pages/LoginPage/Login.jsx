@@ -42,17 +42,16 @@ export const Login = () => {
         const idRecibido = res.data.user._id;
         const roleRecibido = res.data.user.role;
         sessionStorage.setItem('token', tokenRecibido);
-        sessionStorage.setItem('id',idRecibido);
+        sessionStorage.setItem('id', idRecibido);
         sessionStorage.setItem('role', roleRecibido);
-        window.location.reload(true)
+        window.location.reload(true);
         // navigate(-1);
       })
       .catch(error => {
         sweetAlert({ title: 'El usuario no existe', icon: 'error' });
       });
-      
   };
-  
+
   let token = sessionStorage.getItem('token');
 
   return (
