@@ -21,7 +21,7 @@ const CreatePelicula = () => {
         try {
             await axios({
                 method: 'post',
-                url: 'http://localhost:3005/api/movies/create',
+                url: 'https://nocountry-c4g17-api.herokuapp.com/movies/create',
                 data: 
                 {
                 title,

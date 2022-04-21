@@ -13,7 +13,7 @@ const ListUser = () => {
 
     //Mostrar todos los usuarios
     useEffect(async () => {
-        const endPoint = 'http://localhost:3005/api/users';
+        const endPoint = 'https://nocountry-c4g17-api.herokuapp.com/api/users';
         await axios
             .get(endPoint, userList)
             .then((res) => {
@@ -29,7 +29,7 @@ const ListUser = () => {
 
     //Eliminar un Usuario
     const handleDelete = async (id) => {
-        const endPoint = `http://localhost:3005/api/users/${id}`;
+        const endPoint = `https://nocountry-c4g17-api.herokuapp.com/api/users/${id}`;
         await axios.delete(endPoint)
             .then((res) => {
                 swal({ title: 'Deleted', icon: 'success' })

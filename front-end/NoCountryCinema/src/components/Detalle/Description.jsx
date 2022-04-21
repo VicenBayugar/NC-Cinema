@@ -41,7 +41,7 @@ const Description = ({ movie }) => {
     } else {
       try {
         await axios.put(
-          `http://localhost:3005/api/movies/${title}/butacas`,
+          `https://nocountry-c4g17-api.herokuapp.com/api/movies/${title}/butacas`,
           {
             number: butacaElegida.number,
           },

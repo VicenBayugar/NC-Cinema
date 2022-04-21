@@ -8,7 +8,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     const obtenerMovie = async () => {
-      const data = await fetch('http://localhost:3005/api/movies');
+      const data = await fetch('https://nocountry-c4g17-api.herokuapp.com/api/movies');
       const moviesObtenidas = await data.json();
       const movieFinal = moviesObtenidas.response.filter(movie => movie.title == title)
       // console.log(movieFinal[0].butacas);

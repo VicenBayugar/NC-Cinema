@@ -9,7 +9,7 @@ const Profile = () => {
 
   useEffect(() => {
     const obtenerUser = async () => {
-      const data = await fetch(`http://localhost:3005/api/users/${idUser}`);
+      const data = await fetch(`https://nocountry-c4g17-api.herokuapp.com/api/users/${idUser}`);
       const userObtenidas = await data.json();
       setData(userObtenidas);
     };
