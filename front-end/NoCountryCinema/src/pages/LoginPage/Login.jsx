@@ -44,8 +44,8 @@ export const Login = () => {
         sessionStorage.setItem('token', tokenRecibido);
         sessionStorage.setItem('id', idRecibido);
         sessionStorage.setItem('role', roleRecibido);
-        window.location.reload(true);
-        // navigate(-1);
+        //window.location.reload(true);
+        navigate('/');
       })
       .catch(error => {
         sweetAlert({ title: 'El usuario no existe', icon: 'error' });
