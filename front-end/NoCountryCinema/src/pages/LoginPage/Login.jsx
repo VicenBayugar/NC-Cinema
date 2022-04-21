@@ -13,7 +13,8 @@ export const Login = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const endpoint = 'https://nocountry-c4g17-api.herokuapp.com/api/users/login';
+    const endpoint =
+      'https://nocountry-c4g17-api.herokuapp.com/api/users/login';
     const email = e.target.email.value;
     const password = e.target.password.value;
     const filter =
@@ -44,7 +45,6 @@ export const Login = () => {
         sessionStorage.setItem('token', tokenRecibido);
         sessionStorage.setItem('id', idRecibido);
         sessionStorage.setItem('role', roleRecibido);
-        //window.location.reload(true);
         navigate('/');
       })
       .catch(error => {
@@ -57,7 +57,7 @@ export const Login = () => {
   return (
     <>
       {/**si tengo ek token el logo de usuario me dirige a la pagina profile donde el usuario puede ver sus compras */}
-      {token && <Navigate to={'/profile'} />}
+      {/* {token && <Navigate to={'/'} />} */}
       <Container className="">
         <Row>
           <Col
