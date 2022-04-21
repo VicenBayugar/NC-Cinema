@@ -148,7 +148,7 @@ const Description = ({ movie }) => {
             </Col>
           </Row>
 
-          {idUser ? (
+          {idUser && movie.premiere == false ? (
             <>
               <div className="container">
                 <div className="row">
@@ -182,13 +182,15 @@ const Description = ({ movie }) => {
                 <Button onClick={handleSubmit}>Comprar</Button>
               </Container>
             </>
-          ) : (
+          ) : movie.premiere == false ? (
             <h3 className="text-center mt-5 mb-5 ">
               Para comprar la entrada debes{' '}
-              <Link to="/profile" className="text-decoration-none link-sesion">
+              <Link to="/login" className="text-decoration-none link-sesion">
                 iniciar sesión
               </Link>
             </h3>
+          ) : (
+            <h3 className="text-center">Proximamente...</h3>
           )}
         </Container>
       )}
