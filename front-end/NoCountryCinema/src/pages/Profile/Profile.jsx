@@ -73,7 +73,7 @@ const Profile = () => {
                     </tr>
                     <tr>
                       <td>N° de tarjeta: </td>
-                      <td>XXXX XXXX XXXX 1234</td>
+                      <td>XXXX XXXX XXXX 2345</td>
                       <td></td>
                     </tr>
                   </tbody>
