@@ -1,57 +1,98 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'react-bootstrap'
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Form } from 'react-bootstrap'
 
-const ModalEdit = ({ modal, setModal}) => {
-    
 
-    
-    //  const handleEdit = async (id) => {
-    //      const endPoint = `http://localhost:3005/api/movies/${id}`
-    //       await axios.put(endPoint)
-    //       .then((res) => {
-    //             console.log(res);
-    //       })  
-    //       .catch((error) => {
-    //          console.log(error);
-    //          sweetAlert({ title: 'ops', icon: 'error' });
-    //       });
-    //  }
-     
+const ModalEdit = ({ modal, setModal, movie, props }) => {
 
+
+    console.log(movie);
+
+
+    const handleEdit = async (id) => {
+        const endPoint = `http://localhost:3005/api/movies/${id}`
+        await axios.put(endPoint,{
+
+        })
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((error) => {
+                console.log(error);
+                sweetAlert({ title: 'ops', icon: 'error' });
+            });
+    }
+
+const [value, setValue]= useState();
     return (
-        
+
         <Modal show={modal}>
             <ModalHeader style={{ display: 'block' }}>
                 <h4>Editar Pelicula</h4>
             </ModalHeader>
-            
-            <ModalBody>
-                <div className="form-group">
-                    <label htmlFor="nombre">Nombre</label>
-                    <input className="form-control" type='text' name='name' id='name'></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="nombre">Origen</label>
-                    <input className="form-control" type='text' name='origin' id='origin'></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="nombre">Director</label>
-                    <input className="form-control" type='text' name='director' id='director'></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="nombre">Reparto</label>
-                    <input className="form-control" type='text' name='actors' id='actors'></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="nombre">Género</label>
-                    <input className="form-control" type='text' name='genre' id='genre'></input>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="nombre">Calificación</label>
-                    <input className="form-control" type='text' name='qualify' id='qualify'></input>
-                </div>
-            </ModalBody>
+            {movie &&
+                <ModalBody>
+                    <Form >
+                        <Form.Group className="mb-3">
+                            <Form.Label>Nombre de Película</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="title"
+                                value={movie.title}
+                            />
+                            <Form.Label>Sinopsis</Form.Label>
+                            <Form.Control
+                                as="textarea"
+                                rows={3}
+                                name="resume"
+                                value={movie.resume}
+                            />
+                            <Form.Label>Origen</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="origin"
+                                value={movie.origin}
+                            />
+                            <Form.Label>Género</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="genre"
+                                value={movie.genre}
+                            />
+                            <Form.Label>Director</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="director"
+                                value={movie.director}
+                            />
+                            <Form.Label>Reparto</Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="actors"
+                                value={movie.actors}
+                            />
+                            <Form.Label>Calificacion </Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="qualify"
+                                value={movie.qualify}
+                            />
+                            <Form.Label>Duración </Form.Label>
+                            <Form.Control
+                                type="number"
+                                name="duration"
+                                value={movie.length}
+                            />
+                            <Form.Label>Lenguajes </Form.Label>
+                            <Form.Control
+                                type="text"
+                                name="language"
+                                value={movie.language}
+                            />
+                        </Form.Group>
+                    </Form>
+                </ModalBody>
+            }
             <ModalFooter>
                 <Button >Guardar cambios</Button>
                 <Button onClick={() => setModal(false)}> Cancelar</Button>
