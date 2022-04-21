@@ -1,0 +1,11 @@
+.but{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 6px;
+    
+}
+.but:hover{
+    color: rgb(0, 218, 207);
+    
+}

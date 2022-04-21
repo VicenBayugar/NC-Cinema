@@ -1,12 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router} from 'react-router-dom'
+//styles
 import "./App.css";
+//Components
 import Header from "./components/Header/Header";
 import Footer from './components/Footer/Footer';
-import Home from './pages/Home';
-import Profile from './pages/Profile/Profile';
-import MovieDetails from './pages/MovieDetail/MovieDetails';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import {Login} from './pages/LoginPage/Login'
+import AppRoutes from './Rutas/AppRoutes';
+
 
 
 
@@ -16,6 +15,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
+<<<<<<< HEAD
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/login' element={<Login/>} />
@@ -25,6 +25,9 @@ function App() {
      
 
         </Routes>
+=======
+          <AppRoutes/>
+>>>>>>> d4104d44249be56b15530e1f33cc1d3aa0ed7ee9
         <Footer />
       </Router>
     </div>

@@ -1,14 +1,39 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown, NavLink } from 'react-bootstrap';
+import './header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LogoNC from '/img/logo_NCinema.png';
-import { Link, Navigate } from 'react-router-dom';
-
-
-let token = sessionStorage.getItem('token')
-
+import LogoNC from '../../../img/logo_NCinema.png';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [data, setData] = useState();
+  const idUser = sessionStorage.getItem('id') || null;
+
+  function handlerClick(e) {
+    e.preventDefault();
+    if (idUser) {
+      sessionStorage.clear();
+      navigate('/');
+    }
+    window.location.reload(true);
+  }
+
+  useEffect(() => {
+    if (idUser) {
+      const obtenerUser = async () => {
+        const data = await fetch(
+          `https://nocountry-c4g17-api.herokuapp.com/api/users/${idUser}`,
+        );
+        const userObtenidas = await data.json();
+        setData(userObtenidas);
+      };
+      obtenerUser();
+    }
+  }, [idUser]);
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -20,6 +45,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto fs-5 d-flex align-items-center justify-content-center">
+<<<<<<< HEAD
             <Nav.Link href="#promociones">Promociones</Nav.Link>
             <Nav.Link href="#candy">Candy</Nav.Link>
 
@@ -43,6 +69,36 @@ const Header = () => {
             <Link to={"/login"}>
               <i className="bi bi-person-circle text-light"></i>
             </Link>
+=======
+            {data ? (
+              <NavDropdown title={data.user.name}>
+                <div className="dropdown">
+                  {data.user.role[0] === 'admin"' ? (
+                    <Link to="/dashboard/" className="dropdown-item">
+                      <i className="fa fa-sign-in me-2">Dashboard</i>
+                    </Link>
+                  ) : (
+                    <Link to="profile" className="dropdown-item">
+                      <i className="fa fa-sign-in me-2 ">Profile</i>
+                    </Link>
+                  )}
+                  <hr className="dropdown-divider" />
+
+                  <button
+                    className="dropdown-item hover-dark "
+                    onClick={handlerClick}>
+                    Logout <i className="bi bi-box-arrow-right" />
+                  </button>
+                </div>
+              </NavDropdown>
+            ) : (
+              <Link to={'/login'} className="text-decoration-none">
+                <i
+                  className="but bi bi-box-arrow-in-right"
+                  title="Login">{` Iniciar sesión`}</i>
+              </Link>
+            )}
+>>>>>>> d4104d44249be56b15530e1f33cc1d3aa0ed7ee9
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -13,7 +13,7 @@ export const Login = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const endpoint = 'http://localhost:3005/api/users/login';
+    const endpoint = 'https://nocountry-c4g17-api.herokuapp.com/api/users/login';
     const email = e.target.email.value;
     const password = e.target.password.value;
     const filter =
@@ -32,23 +32,26 @@ export const Login = () => {
     //envio peticion para consultar si el usuario esta registrado
     await axios
       .post(endpoint, {
-        email: email,
-        password: password,
+        email,
+        password,
       })
       //recibimoy y guardamos el token en el sessionStrorge del navegador
       //y nos redirige a la ultima ubicacion
       .then(res => {
         const tokenRecibido = res.data.token;
         const idRecibido = res.data.user._id;
+        const roleRecibido = res.data.user.role;
         sessionStorage.setItem('token', tokenRecibido);
-        sessionStorage.setItem('id',idRecibido);
-
-        navigate(-1);
+        sessionStorage.setItem('id', idRecibido);
+        sessionStorage.setItem('role', roleRecibido);
+        //window.location.reload(true);
+        navigate('/');
       })
       .catch(error => {
         sweetAlert({ title: 'El usuario no existe', icon: 'error' });
       });
   };
+
   let token = sessionStorage.getItem('token');
 
   return (

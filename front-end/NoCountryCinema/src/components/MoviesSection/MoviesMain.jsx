@@ -13,7 +13,7 @@ const MoviesMain = () => {
     setLoading(true);
     const obtenerMovies = async () => {
       try {
-        const { data } = await axios.get('http://localhost:3005/api/movies');
+        const { data } = await axios.get('https://nocountry-c4g17-api.herokuapp.com/api/movies');
         const moviesFinal = data.response.filter(
           movie => movie.premiere == false,
         );

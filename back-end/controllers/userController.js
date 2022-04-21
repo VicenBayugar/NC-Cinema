@@ -4,6 +4,28 @@ const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 
 const userController = {
+  admin: async (req, res) => {
+    try {
+      let users = await dbMongo.find();
+      return res.status(200).json({
+        total: users.length,
+        users,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(404).send("No se puede acceder a usuarios");
+    }
+  },
+  deleteUser: async (req, res) => {
+    const id = req.params.id;
+    try {
+      await dbMongo.findByIdAndDelete(id);
+      return res.status(200).send("¡Usuario eliminado con un exito rotundo!");
+    } catch (error) {
+      console.log(error);
+      res.status(404).send("No se puede acceder a usuarios");
+    }
+  },
   createUser: async (req, res, next) => {
     try {
       // revisamos si hay errores
@@ -100,29 +122,26 @@ const userController = {
         {
           expiresIn: 3600,
         },
-        (error, token , payload) => {
+        (error, token, payload) => {
           if (error) throw error;
 
           //mensaje de confirmación
-          res.json({ token , user});
-          
+          res.json({ token, user });
         }
       );
-    //   res.header('auth-token', token).json({
-    //     error: null,
-    //     data: {token}
-    // })
+      //   res.header('auth-token', token).json({
+      //     error: null,
+      //     data: {token}
+      // })
     } catch (error) {
       console.log(error);
       res.status(404).send("Credenciales inválidas");
     }
   },
   detailUser: async (req, res, next) => {
-    
     try {
       const user = await dbMongo.findById(req.params.id);
-      // return res.send("movies id")
-      console.log(user)
+
       return res.status(200).json({
         user,
       });

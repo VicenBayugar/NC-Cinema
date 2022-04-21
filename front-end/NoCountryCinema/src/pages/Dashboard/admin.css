@@ -1,0 +1,24 @@
+.bix {
+  font-size: 30px;
+}
+
+.bix2 {
+  font-size: 70px;
+}
+.crud-p {
+  margin: 0;
+  padding: 12px;
+  font-size: 25px;
+  justify-content: center;
+}
+
+.hov {
+  color: white;
+}
+.hov:hover {
+  color: rgb(0, 218, 207);
+}
+.cent {
+  margin-top: 100px;
+}
+

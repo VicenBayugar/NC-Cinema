@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, Link } from 'react-router-dom';
 import { Button, Container, Row, Table, Col, Card } from 'react-bootstrap';
-import axios from 'axios';
 
 const Profile = () => {
   const navigate = useNavigate();
-  function handlerClick(e) {
-    e.preventDefault();
-    sessionStorage.clear();
-    navigate('/');
-  }
 
   const [data, setData] = useState();
+<<<<<<< HEAD
   const idUser = sessionStorage.getItem('id');
 const butacas =sessionStorage.getItem('butacas');
+=======
+
+>>>>>>> d4104d44249be56b15530e1f33cc1d3aa0ed7ee9
   useEffect(() => {
     const obtenerUser = async () => {
-      const data = await fetch(`http://localhost:3005/api/users/${idUser}`);
+      const data = await fetch(
+        `https://nocountry-c4g17-api.herokuapp.com/api/users/${idUser}`,
+      );
       const userObtenidas = await data.json();
       setData(userObtenidas);
     };
@@ -31,30 +31,25 @@ const butacas =sessionStorage.getItem('butacas');
     obtenerButaca();
   },  []);
 
-  console.log(data);
-
+  let idUser = sessionStorage.getItem('id');
   let token = sessionStorage.getItem('token');
+  let role = sessionStorage.getItem('role');
+  let pelicula = sessionStorage.getItem('pelicula') || null;
+  let butaca = sessionStorage.getItem('butaca') || ' 0';
+  let day = sessionStorage.getItem('day');
+  let schedule = sessionStorage.getItem('schedule');
+
   return (
     <>
       {!token && <Navigate to={'/login'} />}
+      {token && role === 'admin"' && <Navigate to={'/dashboard'} />}
       {data && (
         <Container>
-          <Container className="text-end">
-            <Button
-              style={{
-                color: 'whitesmoke',
-              }}
-              size="xs"
-              variant="outline"
-              onClick={handlerClick}>
-              Cerrar Sesión
-            </Button>
-          </Container>
           <Row className="row-tittle text-center">
-            <h2 className="mt-1">Perfil</h2>
+            <h2 className="mt-5">Perfil</h2>
           </Row>
           <Row className="mt-5 mb-5">
-            <Col xl={6}>
+            <Col xl={6} className="pb-4">
               <Row className="ps-5 pe-5">
                 <h2 className="mb-5 text-center">Información personal</h2>
                 <Table striped hover variant="dark">
@@ -100,6 +95,7 @@ const butacas =sessionStorage.getItem('butacas');
             </Col>
             <Col xl={6} className="pb-4">
               <Row className="ps-5 pe-5">
+<<<<<<< HEAD
                 <h2 className="mb-5 text-center">Mis películas:</h2>
                 <Card className="text-center bg-dark">
                   <Card.Header>Sala 2</Card.Header>
@@ -123,6 +119,48 @@ const butacas =sessionStorage.getItem('butacas');
                   </Card.Body>
                   <Card.Footer className="text-muted">2D - DOBLADA</Card.Footer>
                 </Card>
+=======
+                {pelicula ? (
+                  <>
+                    <h2 className="mb-5 text-center">Mis películas:</h2>
+                    <Card className="text-center bg-dark">
+                      <Card.Header>Sala</Card.Header>
+                      <Card.Body>
+                        <Card.Title className="mb-4">{pelicula}</Card.Title>
+                        <Card.Text>
+                          <i className="bi bi-calendar3 fs-5 pe-1"></i>
+                          {day}
+                        </Card.Text>
+                        <Card.Text>
+                          <i className="bi bi-stopwatch fs-5 pe-1"></i>
+                          {schedule}
+                        </Card.Text>
+                        <Card.Text>
+                          <i className="bi bi-geo-alt fs-5 pe-1"></i>Butaca:
+                          {` ${butaca}`}
+                        </Card.Text>
+                        <Link to="/" className="text-decoration-none">
+                          <Button variant="primary">Seguir comprando</Button>
+                        </Link>
+                      </Card.Body>
+                      <Card.Footer className="text-muted">
+                        2D - DOBLADA
+                      </Card.Footer>
+                    </Card>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="text-center mb-5">
+                      Aún no has realizado ninguna compra
+                    </h2>
+                    <Link
+                      to="/"
+                      className="fs-2 link-sesion text-center text-decoration-none">
+                      Ver películas
+                    </Link>
+                  </>
+                )}
+>>>>>>> d4104d44249be56b15530e1f33cc1d3aa0ed7ee9
               </Row>
             </Col>
           </Row>
