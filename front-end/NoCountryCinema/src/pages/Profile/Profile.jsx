@@ -6,12 +6,6 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const [data, setData] = useState();
-<<<<<<< HEAD
-  const idUser = sessionStorage.getItem('id');
-const butacas =sessionStorage.getItem('butacas');
-=======
-
->>>>>>> d4104d44249be56b15530e1f33cc1d3aa0ed7ee9
   useEffect(() => {
     const obtenerUser = async () => {
       const data = await fetch(
@@ -95,31 +89,6 @@ const butacas =sessionStorage.getItem('butacas');
             </Col>
             <Col xl={6} className="pb-4">
               <Row className="ps-5 pe-5">
-<<<<<<< HEAD
-                <h2 className="mb-5 text-center">Mis películas:</h2>
-                <Card className="text-center bg-dark">
-                  <Card.Header>Sala 2</Card.Header>
-             
-
-                  <Card.Header>N° de butacas</Card.Header>
-                  <Card.Body>
-                    <Card.Title className="mb-4">Batman</Card.Title>
-                    <Card.Text>
-                      <i className="bi bi-calendar3 fs-5 pe-1"></i>Hoy, 11 de
-                      Abril, 2022
-                    </Card.Text>
-                    <Card.Text>
-                      <i className="bi bi-stopwatch fs-5 pe-1"></i>6:00 pm
-                    </Card.Text>
-                    <Card.Text>
-                      <i className="bi bi-geo-alt fs-5 pe-1"></i>Ubicaciones:
-                      P-6, P-7
-                    </Card.Text>
-                    <Button variant="primary">Cambiar ubicación</Button>
-                  </Card.Body>
-                  <Card.Footer className="text-muted">2D - DOBLADA</Card.Footer>
-                </Card>
-=======
                 {pelicula ? (
                   <>
                     <h2 className="mb-5 text-center">Mis películas:</h2>
@@ -160,7 +129,6 @@ const butacas =sessionStorage.getItem('butacas');
                     </Link>
                   </>
                 )}
->>>>>>> d4104d44249be56b15530e1f33cc1d3aa0ed7ee9
               </Row>
             </Col>
           </Row>
